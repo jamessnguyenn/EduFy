@@ -1,12 +1,9 @@
-
-import './App.css';
-
+import "./App.css";
+import ProductivePage from "./components/productivePage/productivePage";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        Hello World
-      </header>
+      <ProductivePage />
     </div>
   );
 }
