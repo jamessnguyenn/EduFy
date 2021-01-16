@@ -1,0 +1,124 @@
+.about {
+  display: flex;
+  flex-direction: column;
+}
+.prize-image{
+  margin-top: 50px;
+}
+
+.main-title{
+  color: var(--main-dark);
+}
+
+.hook-section {
+  margin-top:30px;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-evenly;
+  height: auto;
+}
+
+.blueLine {
+  width: 100%;
+  background-color: var(--main-color);
+  height: 5px;
+}
+
+.sloganText {
+  margin-top: 20px;
+  
+}
+.about-Container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 95%;
+  height: auto;
+  
+}
+
+.about-title {
+  font-weight: bold;
+  justify-self: start;
+  align-self: start;
+  color: var(--main-dark);
+}
+
+.edufyDef {
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+.prize-image img{
+  width:100%;
+}
+p{
+  max-width: 100%;
+}
+.directions {
+  display: grid;
+  padding: 0 10%;
+  row-gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  height: 40vh;
+  margin-bottom: 200px;
+}
+
+.circleDir {
+  border-radius: 50%;
+  width: 105px;
+  height: 105px;
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.dirContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  font-weight: bold;
+  justify-content: space-evenly;
+}
+
+.dirSmall {
+  font-size: 45px;
+}
+
+
+
+.footer {
+  height: 30%vh;
+  background-color: var(--main-grey);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-container {
+  margin: 0 5%;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footerLogo {
+  height: 48px;
+  width: auto;
+}
+
+.footerBTN {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.footerTitle{
+  margin-top:30px;
+}
