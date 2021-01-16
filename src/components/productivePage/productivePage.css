@@ -73,17 +73,18 @@
 }
 
 .playIcon {
-  margin-right: 10px;
-  color: var(--main-color);
-}
-.playIcon.active {
-  margin-right: 10px;
-  color: var(--main-color);
-  opacity: 80%;
+  color: var(--main-white);
+  font-size: 35px;
 }
 
 .pauseIcon {
-  color: var(--main-color);
+  color: var(--main-white);
+  font-size: 35px;
+}
+.playIcon.active {
+  margin-right: 10px;
+
+  opacity: 40%;
 }
 
 .pomodoroTool {

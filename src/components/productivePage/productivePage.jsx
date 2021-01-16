@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Navbar from "../navbar/navbar";
 import "./productivePage.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,18 +6,40 @@ import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 
 export default function ProductivePage() {
   //let [timerMin, setTimerMin] = useState("24");
-  const [timerSecs, setTimerSec] = useState("59");
+  const [isPaused, setIsPaused] = useState(false);
+  const [timerSecs, setTimerSec] = useState("20");
 
-  const startTimer = () => {
-    let interval = setInterval(decreaseTimer, 1000);
-  };
-
-  function decreaseTimer() {
-    setTimerSec(timerSecs - 1);
-    // console.log(timerSecs);
+  //Converting total time to display
+  let minutes = Math.floor(timerSecs / 60);
+  let seconds = Math.floor(timerSecs - 60 * minutes);
+  if (seconds < 10) {
+    seconds = `0${seconds}`;
   }
 
-  //startTimer();
+  let intervalRef = useRef();
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      if (timerSecs === 1) {
+        setIsPaused(true);
+      }
+      {
+        isPaused
+          ? clearInterval(intervalRef.current)
+          : setTimerSec(timerSecs - 1);
+      }
+    }, 1000);
+    intervalRef.current = id;
+    return () => clearInterval(intervalRef.current);
+  });
+
+  function pauseTimer() {
+    setIsPaused(true);
+  }
+
+  function startTimer() {
+    setIsPaused(false);
+  }
 
   return (
     <>
@@ -30,10 +52,16 @@ export default function ProductivePage() {
               <small className="pomoTool"> Short Break </small>
               <small className="pomoTool"> Long Break </small>
             </div>
-            <span className="timer"> 24:59 </span>
+            <span className="timer">
+              {minutes}:{seconds}
+            </span>
             <div className="pomoIcons">
-              <FontAwesomeIcon className="playIcon active" icon={faPlay} />
-              <FontAwesomeIcon className="pauseIcon" icon={faPause} />
+              <FontAwesomeIcon onClick={startTimer} icon={faPlay} />
+              <FontAwesomeIcon
+                className="pauseIcon"
+                onClick={pauseTimer}
+                icon={faPause}
+              />
             </div>
           </div>
 
