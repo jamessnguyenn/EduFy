@@ -18,7 +18,9 @@ export default function navbar() {
         <Link to="/liveFeed">
         <small className="navLink"> Live Feed </small>
         </Link>
+        <Link to="/store">
         <small className="navLink"> Store </small>
+        </Link>
       </div>
 
       <div className="navEnd">
