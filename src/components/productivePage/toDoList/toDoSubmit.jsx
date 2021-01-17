@@ -14,6 +14,10 @@ export default function ToDoSubmit({ addTodo }) {
     setTodo({ ...todo, description: e.target.value });
   }
 
+  function handleDateInputChange(e) {
+    setTodo({ ...todo, dueDate: e.target.value });
+  }
+
   function makeid(length) {
     var result = "";
     var characters =
@@ -30,7 +34,7 @@ export default function ToDoSubmit({ addTodo }) {
     // trim() gets rid of string whitespace
     if (todo.description.trim()) {
       addTodo({ ...todo, _id: makeid(36) });
-      setTodo({ ...todo, description: "" });
+      setTodo({ ...todo, description: "", dueDate: "" });
     }
   }
 
@@ -45,9 +49,15 @@ export default function ToDoSubmit({ addTodo }) {
           onChange={handleTaskInputChange}
         />
 
-        <input className="taskBTN" input="click" value="+" />
+        <input
+          value={todo.dueDate}
+          className="dateInput"
+          type="date"
+          onChange={handleDateInputChange}
+        />
+
+        {/*  <input className="taskBTN" input="click" value="+" /> */}
       </form>
-      <input value={todo.dueDate} className="dateInput" type="date" />
     </>
   );
 }

@@ -7,6 +7,7 @@ import TodoFeed from "./toDoFeed";
 
 export default function ToDoList() {
   const [todos, setTodos] = useState([]);
+  const [filter, setFilter] = useState("all");
 
   const LOCAL_STORAGE_KEY = "react-todo-list-todos";
   useEffect(() => {
@@ -27,6 +28,10 @@ export default function ToDoList() {
     setTodos([todo, ...todos]);
   };
 
+  function removeTodo(id) {
+    setTodos(todos.filter((todo) => todo._id !== id));
+  }
+
   function toggleComplete(id) {
     setTodos(
       todos.map((todo) => {
@@ -41,8 +46,9 @@ export default function ToDoList() {
     );
   }
 
-  function removeTodo(id) {
-    setTodos(todos.filter((todo) => todo.id !== id));
+  //Change the filter state
+  function changeFilter(filter) {
+    setFilter(filter);
   }
 
   console.log(todos);
@@ -54,9 +60,29 @@ export default function ToDoList() {
       </div>
 
       <div className="taskButtons">
-        <button className="taskButton isActive btnLeft"> All </button>
-        <button className="taskButton btnMiddle"> Finish </button>
-        <button className="taskButton btnRight"> Unfinshed </button>
+        <button
+          className={filter === "all" ? "taskButton active" : " taskButton"}
+          onClick={() => changeFilter("all")}
+        >
+          {" "}
+          All{" "}
+        </button>
+        <button
+          className={filter === "active" ? "taskButton active" : " taskButton"}
+          onClick={() => changeFilter("active")}
+        >
+          {" "}
+          Finish{" "}
+        </button>
+        <button
+          className={
+            filter === "complete" ? "taskButton active" : " taskButton"
+          }
+          onClick={() => changeFilter("complete")}
+        >
+          {" "}
+          Unfinshed{" "}
+        </button>
       </div>
 
       <div className="toDoFeed">
@@ -64,6 +90,7 @@ export default function ToDoList() {
           todos={todos}
           removeTodo={removeTodo}
           toggleComplete={toggleComplete}
+          filter={filter}
         />
       </div>
     </div>
