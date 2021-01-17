@@ -3,7 +3,7 @@ import "../landing/landing.css"
 import planSVG from "./img/plan.svg";
 import newIdeasSVG from "./img/newIdeas.svg";
 import { Link } from "react-router-dom";
-import NavBar from '../navbar/navbar';
+import NavBar from '../unloggedNavBar/unloggedNavBar';
 
 
 function landingPage() {

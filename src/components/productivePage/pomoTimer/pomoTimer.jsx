@@ -2,13 +2,14 @@ import React, { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 import "./pomoTimer.css";
+import axios from "axios";
 
-export default function PomoTimer() {
+export default function PomoTimer({user}) {
   //let [timerMin, setTimerMin] = useState("24");
   const [isPaused, setIsPaused] = useState(true);
   const [timerSecs, setTimerSec] = useState("1500");
   const [timerMode, setTimerMode] = useState("pomodoro");
-  let counter = 0;
+  const[counter, setCounter] = useState(0);
   //Converting total time to display
   let minutes = Math.floor(timerSecs / 60);
   let seconds = Math.floor(timerSecs - 60 * minutes);
@@ -18,19 +19,40 @@ export default function PomoTimer() {
 
   let intervalRef = useRef();
 
+
+  useEffect(()=>{
+    console.log(counter);
+    if(counter>0){
+       
+
+    }
+  },[counter])
+
+  useEffect(()=>{
+    if (timerSecs === 0) {
+      if (timerMode === "pomodoro") {
+        setCounter(prevCounter => prevCounter+1);
+        setTimerSec(1500);
+      }else if(timerMode == "shortBreak"){
+        setTimerSec(300);
+      }else{
+        setTimerSec(600);
+      }
+      setIsPaused(true);
+     
+    }
+
+  },[timerSecs])
+
   useEffect(() => {
     const id = setInterval(() => {
-      if (timerSecs === 1) {
-        if (timerMode === "pomodoro") {
-          counter++;
-        }
-        setIsPaused(true);
-      }
+      
       {
         isPaused
-          ? clearInterval(intervalRef.current)
+          ?clearInterval(intervalRef.current) 
           : setTimerSec(timerSecs - 1);
       }
+      
     }, 1000);
     intervalRef.current = id;
     return () => clearInterval(intervalRef.current);
@@ -45,17 +67,20 @@ export default function PomoTimer() {
   }
 
   function setTimerShort() {
+    pauseTimer();
     setTimerSec(300);
     setTimerMode("shortBreak");
   }
 
   function setTimerLong() {
     setTimerSec(600);
+    pauseTimer();
     setTimerMode("longBreak");
   }
 
   function setPomodoro() {
     setTimerSec(1500);
+    pauseTimer();
     setTimerMode("pomodoro");
   }
 

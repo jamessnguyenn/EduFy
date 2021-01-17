@@ -1,13 +1,11 @@
 import "./App.css";
 import ProductivePage from "./components/productivePage/productivePage";
 import LandingPage from "./components/landing/landing";
-<<<<<<< HEAD
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-=======
+
 import SignUpPage from "./components/signup/signUp";
 import LoginPage from "./components/login/login";
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
->>>>>>> 62fe1e76f040a2e4daf488174a123d0bfedc65c0
+
 
 function App() {
   return (
