@@ -3,14 +3,14 @@
 
 :root {
   --main-color: #437fc7;
+  --secondary-blue: #7397bb;
+  --light-blue: #2d84da;
   --main-secondary: #8bbae9;
   --main-gold: #e2b714;
   --main-white: #fdfbff;
   --main-grey: #dadee4;
-  --main-dark: #0e1012;
+  --main-dark: #040f1a;
 }
-
-
 
 h1 {
   color: var(--main-white);

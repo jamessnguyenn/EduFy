@@ -1,0 +1,23 @@
+.focusModeContainer {
+  /*  display: grid;
+    grid-row: 2/3;
+    grid-column: 2/3;
+    width: 100%;
+    height: 100%; */
+  width: 30%;
+  height: 430px;
+  background-color: var(--main-dark);
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: center;
+}
+
+.focusTitle {
+  font-family: "Noto Serif", serif;
+}
+
+.codingSVG {
+  width: 80%;
+  margin-top: auto;
+}
