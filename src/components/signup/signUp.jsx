@@ -48,7 +48,7 @@ const changeLocation = (e)=> {
 
 const submit = (e)=>{
   e.preventDefault();
-
+  setDisabled(true);
   const user = {
     firstName: firstName,
     lastName: lastName,
@@ -62,7 +62,8 @@ const submit = (e)=>{
     localStorage.setItem('user_id', res.data.user_id);
    history.push('/profile')
   })
-  .catch(err => console.log(err));
+  .catch(err => setEmailError(true));
+  setDisabled(false);
 
 }
 
