@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../landing/landing.css"
 import planSVG from "./img/plan.svg";
 import newIdeasSVG from "./img/newIdeas.svg";
@@ -7,6 +7,11 @@ import NavBar from '../navbar/navbar';
 
 
 function landingPage() {
+
+
+    
+
+
     return (
         <div className="about">
             <NavBar />
@@ -70,8 +75,8 @@ function landingPage() {
                                 <p className="edufyDef">
                                 You first start off with 100 health and 0 gold. Every time you finish a task, you gain 10 coins! <br/>
                                 If you don't finish the task, your health will dramatically drop. Coins you have earned can be   <br/>
-                                spent. Your coins show how hard you've hard so make sure you spend it correctlyat our store.
-                                <br/>  At 0 health, your profile wil fully  reset, so make sure to get those tasks going!  <br/>
+                                spent at the shop. Your coins show how hard you've hard so make sure you spend it wisely.
+                                <br/>  At 0 health, your profile wil fully reset, so make sure to get those tasks going!  <br/>
                                 </p>
                             </div>
                            

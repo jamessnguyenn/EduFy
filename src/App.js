@@ -1,6 +1,7 @@
 import "./App.css";
 import ProductivePage from "./components/productivePage/productivePage";
 import LandingPage from "./components/landing/landing";
+import SignUpPage from "./components/signup/signUp";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 function App() {
@@ -12,6 +13,9 @@ function App() {
         </Route>
         <Route path ="/profile">
           <ProductivePage/>
+        </Route>
+        <Route path="/signup">
+          <SignUpPage/>
         </Route>
       </Switch>
     </Router>
