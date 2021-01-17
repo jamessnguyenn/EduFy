@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 import "./pomoTimer.css";
+import "../productivePage.css";
 
 export default function PomoTimer() {
   //let [timerMin, setTimerMin] = useState("24");
@@ -60,7 +61,7 @@ export default function PomoTimer() {
   }
 
   return (
-    <div className=" templateBG popodoroContainer  ">
+    <div className=" templateBG popodoroContainer shadow  ">
       <div className="pomodoroTool">
         <small
           onClick={setPomodoro}

@@ -1,0 +1,40 @@
+.todoContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 15% 15% 10% 1fr;
+  width: 50%;
+
+  border-top-color: red;
+
+  height: 530px;
+}
+
+.toDoName {
+  grid-row: 1/2;
+  grid-column: 1/4;
+  text-align: center;
+  background: linear-gradient(#107bf4, #00bbfd);
+}
+
+.toDoInputsContainer {
+  grid-row: 2/3;
+  grid-column: 1/4;
+}
+
+.taskButtons {
+  grid-row: 3/4;
+  grid-column: 1/4;
+}
+
+.taskButton {
+  width: 33%;
+}
+
+.toDoFeed {
+  grid-row: 4/5;
+  grid-column: 1/4;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}

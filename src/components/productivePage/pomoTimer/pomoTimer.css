@@ -10,6 +10,7 @@
   height: 250px;
   align-items: center;
   justify-content: space-around;
+  color: white;
   background: linear-gradient(#2c83eb, #24c3f5);
 }
 
