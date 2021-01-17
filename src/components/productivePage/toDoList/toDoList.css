@@ -7,6 +7,7 @@
   border-top-color: 25px solid red;
 
   height: 530px;
+  margin-bottom:30px;
 }
 
 .toDoName {
@@ -113,11 +114,13 @@ taskInput::-ms-input-placeholder {
 }
 
 .dateInput {
-  width: 60%;
+  width: 80%;
+  text-align: center;
   background-color: rgb(47, 47, 47);
   margin-left: 12px;
   color: white;
   border-color: black;
+  border-radius: 8px;
 }
 
 /* .btnLeft {
@@ -149,6 +152,7 @@ taskInput::-ms-input-placeholder {
   align-items: center;
   border: 0px;
   overflow: scroll;
+  overflow-x: hidden;
   padding: 20px;
   background-color: #e6e9ec;
 }
