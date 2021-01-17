@@ -80,18 +80,18 @@
   height: 100%;
 }
 
-::placeholder {
+taskInput::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: white;
   /* Firefox */
 }
 
-:-ms-input-placeholder {
+taskInput:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
   color: white;
 }
 
-::-ms-input-placeholder {
+taskInput::-ms-input-placeholder {
   /* Microsoft Edge */
   color: white;
 }
@@ -187,7 +187,7 @@
   align-items: center;
   height: 60%;
   width: 60%;
-  background-color: #bbb;
+  background-color: rgb(255, 255, 255);
   border-radius: 50%;
   display: inline-block;
 }
