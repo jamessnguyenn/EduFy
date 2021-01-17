@@ -4,6 +4,7 @@
     background-size: 90%;
     background-image: url('./login.svg');
     background-position: center;
+    background-color:var(--main-white);
     background-repeat: no-repeat;
    }
  .login-container{
