@@ -25,7 +25,24 @@ export default function PomoTimer({user}) {
   useEffect(()=>{
     console.log(counter);
     if(counter>0){
-       
+      const post = {
+        avatar: user.avatar,
+        description: user.firstName + " "+ user.lastName + " completed"+counter+" pomodoros. Keep it up!",
+        name: user.firstName + " "+ user.lastName,
+        location: user.location,
+        badge: false,
+      }
+      axios.post(`https://edufy-api.herokuapp.com/posts`, post, {
+        headers:{
+          'Authorization': 'Bearers ' + localStorage.getItem('token')
+        }
+      })
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err=>{
+        console.log(err);
+      })
 
     }
   },[counter])
