@@ -33,7 +33,7 @@ export default function navbar() {
 
         <div className="coinsContainer">
           <FontAwesomeIcon className="coinIcon" icon={faCoins} />
-          1020
+          &nbsp; &nbsp; 1020
         </div>
         <a href = '/' onClick={logout}>
         <small className="navLink">Logout </small>
