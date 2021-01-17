@@ -4,7 +4,7 @@ import "./productivePage.css";
 import PomodoroTimer from "./pomoTimer/pomoTimer";
 import Motivation from "./motivation/motivation";
 import FocusMode from "./focusMode/focusMode";
-import focusMode from "./focusMode/focusMode";
+import ToDoList from "./toDoList/toDoList";
 
 export default function ProductivePage() {
   return (
@@ -16,9 +16,7 @@ export default function ProductivePage() {
           <Motivation />
         </div>
         <div className="row">
-          <div className="todoContainer templateBG ">
-            <h3> Task to accomplish</h3>
-          </div>
+          <ToDoList />
           <FocusMode />
         </div>
       </div>

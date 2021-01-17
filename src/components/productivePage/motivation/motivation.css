@@ -12,9 +12,16 @@
   height: 230px;
   text-align: center;
   padding: 0px 20px;
-  background-color: var(--secondary-blue);
+  background: linear-gradient(#2d68b1c2, #1c88f3);
 }
 
 .motivationalQuotes {
   text-align: center;
+  font-family: "Oxygen", sans-serif;
+}
+
+.quote {
+  text-align: center;
+  font-family: "Oxygen", sans-serif;
+  font-size: 22px;
 }

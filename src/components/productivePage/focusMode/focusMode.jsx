@@ -38,7 +38,7 @@ export default function FocusMode() {
   }, []);
 
   return (
-    <div className="templateBG focusModeContainer">
+    <div className="templateBG focusModeContainer shadow">
       <h2 className="focusTitle"> Focus Mode </h2>
       <input
         type="checkbox"

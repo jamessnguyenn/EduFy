@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
 import "./pomoTimer.css";
 import axios from "axios";
+import "../productivePage.css";
+
 
 export default function PomoTimer({user}) {
   //let [timerMin, setTimerMin] = useState("24");
@@ -85,7 +87,7 @@ export default function PomoTimer({user}) {
   }
 
   return (
-    <div className=" templateBG popodoroContainer  ">
+    <div className=" templateBG popodoroContainer shadow  ">
       <div className="pomodoroTool">
         <small
           onClick={setPomodoro}
