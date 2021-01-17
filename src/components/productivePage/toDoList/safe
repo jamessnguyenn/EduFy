@@ -49,6 +49,21 @@ export default function ToDoList() {
   return (
     <div className=" templateBG todoContainer darkShadow ">
       <h3 className="toDoName"> Tasks </h3>
+      {/*     <div className="toDoInputsContainer">
+       
+        <form className="taskForm">
+          <input
+            className="taskInput darkShadow"
+            placeholder="Add a task"
+            type="text"
+          />
+          <input className="dateInput" input="click" value="+" />
+          <button type="submit"> </button>
+        </form>
+
+        <input className="dateInput" type="date" />
+      </div>
+ */}
 
       <ToDoSubmit addTodo={addTodo} />
       <div className="taskButtons">
@@ -56,8 +71,18 @@ export default function ToDoList() {
         <button className="taskButton btnMiddle"> Finish </button>
         <button className="taskButton btnRight"> Unfinshed </button>
       </div>
-      {/* 
-      <TodoFeed
+
+      {/*  <div className="toDoFeed">
+        <div className="task">
+          <h4 className="taskName"> Task Name </h4>
+          <div className="circleContainer">
+            <div className="circle"></div>
+          </div>
+          <small className="taskDueDate"> Jan 1st </small>
+          <FontAwesomeIcon className="trashIcon" icon={faTrash} />
+        </div>
+      </div> */}
+      {/* <TodoFeed
         todos={todos}
         removeTodo={removeTodo}
         toggleComplete={toggleComplete}
