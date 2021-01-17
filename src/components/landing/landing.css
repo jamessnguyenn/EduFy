@@ -1,6 +1,7 @@
 .about {
   display: flex;
   flex-direction: column;
+  background-color: var(--main-white);
 }
 .prize-image{
   margin-top: 50px;
@@ -9,9 +10,19 @@
 .main-title{
   color: var(--main-dark);
 }
-
+.explanation-container{
+  margin-top:30px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-evenly;
+  height: auto;
+  
+}
 .hook-section {
   margin-top:30px;
+  margin-bottom: 40px;
   display: flex;
   flex-direction: row;
   align-items: start;
@@ -62,7 +73,7 @@ p{
   row-gap: 40px;
   grid-template-columns: 1fr 1fr;
   height: 40vh;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
 }
 
 .circleDir {
@@ -74,33 +85,38 @@ p{
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: bold;
 }
 
 .dirContainer {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   font-weight: bold;
-  justify-content: space-evenly;
+ 
 }
 
 .dirSmall {
-  font-size: 45px;
+  font-size: 35px;
+  display: flex;
+  width: auto;
+  height: 105px;
+  margin-top:40px;
 }
-
-
 
 .footer {
   height: 30%vh;
-  background-color: var(--main-grey);
+ 
+  background-color:var(--main-secondary);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.footer-container {
+.footer-container, .banner-container {
   margin: 0 5%;
   padding-top: 10px;
   display: flex;
@@ -114,11 +130,62 @@ p{
   width: auto;
 }
 
-.footerBTN {
-  margin-top: 30px;
-  margin-bottom: 40px;
+.join-button{
+  border-radius: 60px;
+  background-color:var(--main-color) ;
+  font-size:25px;
+  padding: 10px;
+  padding-left:60px;
+  padding-right:60px;
+  color: white;
+  border:none;
+}
+.join-button:hover, .footer-button:hover{
+  background-color:#4d91e6;
+  cursor:pointer;
+  outline:none;
+
+}
+.join-button:focus, .footer-button:focus{
+  background-color:#547baa;
+  cursor:pointer;
+  outline:none;
 }
 
+.footer-button{
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border-radius: 60px;
+  font-size:25px;
+  padding: 10px;
+  padding-left:60px;
+  padding-right:60px;
+  background-color:var(--main-color) ;
+  color: white;
+  border:none;
+}
 .footerTitle{
   margin-top:30px;
 }
+
+.bannerTitle{
+  color: white;
+  font-size: 50px;
+}
+
+.banner{
+  height: 50vh;
+  background-image:  linear-gradient(
+    rgba(0, 0, 0, 0.4), 
+    rgba(0, 0, 0, 0.4)
+  ), url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') ;
+  background-size: 100%;
+  background-position:center;
+  display: flex;
+  background-color:var(--main-secondary);
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+
+}
+
