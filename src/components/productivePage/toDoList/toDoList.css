@@ -119,6 +119,7 @@ taskInput::-ms-input-placeholder {
   background-color: rgb(47, 47, 47);
   margin-left: 12px;
   color: white;
+  border-radius: 8px;
   border-color: black;
   border-radius: 8px;
 }
