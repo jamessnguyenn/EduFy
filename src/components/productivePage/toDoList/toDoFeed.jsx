@@ -1,9 +1,10 @@
 import React from "react";
 import Todo from "./todo";
+import "./toDoList.css";
 
-export default function ToDoFeed({todos, removeTodo, toggleComplete}) {
+export default function ToDoFeed({ todos, removeTodo, toggleComplete }) {
   return (
-    <div>
+    <>
       {todos.map((todo) => (
         <Todo
           key={todo._id}
@@ -12,6 +13,6 @@ export default function ToDoFeed({todos, removeTodo, toggleComplete}) {
           toggleComplete={toggleComplete}
         />
       ))}
-    </div>
+    </>
   );
 }

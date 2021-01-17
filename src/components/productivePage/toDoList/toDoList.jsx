@@ -22,10 +22,10 @@ export default function ToDoList() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
   }, [todos]);
 
- const addTodo = (todo)=> {
+  const addTodo = (todo) => {
     // adds new todo to beginning of todos array
     setTodos([todo, ...todos]);
-  }
+  };
 
   function toggleComplete(id) {
     setTodos(
@@ -49,19 +49,23 @@ export default function ToDoList() {
   return (
     <div className=" templateBG todoContainer darkShadow ">
       <h3 className="toDoName"> Tasks </h3>
+      <div className="toDoInputsContainer">
+        <ToDoSubmit addTodo={addTodo} />
+      </div>
 
-      <ToDoSubmit addTodo={addTodo} />
       <div className="taskButtons">
         <button className="taskButton isActive btnLeft"> All </button>
         <button className="taskButton btnMiddle"> Finish </button>
         <button className="taskButton btnRight"> Unfinshed </button>
       </div>
-      {
-      <TodoFeed
-        todos={todos}
-        removeTodo={removeTodo}
-        toggleComplete={toggleComplete}
-      /> }
+
+      <div className="toDoFeed">
+        <TodoFeed
+          todos={todos}
+          removeTodo={removeTodo}
+          toggleComplete={toggleComplete}
+        />
+      </div>
     </div>
   );
 }

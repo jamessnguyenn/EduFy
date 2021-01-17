@@ -61,7 +61,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-
   margin: 0px;
   padding: 0px;
   height: 100%;
@@ -145,6 +144,7 @@
   color: var(--main-color);
   width: 70%;
   height: 25%;
+  margin-bottom: 10px;
 }
 
 .taskName {

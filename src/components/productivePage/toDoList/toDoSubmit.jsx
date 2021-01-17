@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function ToDoSubmit({addTodo}) {
+export default function ToDoSubmit({ addTodo }) {
   const [todo, setTodo] = useState({
     _id: "",
     checked: false,
@@ -25,30 +25,29 @@ export default function ToDoSubmit({addTodo}) {
     return result;
   }
 
-  function handleSubmit(todo, e) {
+  function handleSubmit(e) {
     e.preventDefault(); // prevents browser refresh
     // trim() gets rid of string whitespace
     if (todo.description.trim()) {
-      addTodo(todo);
+      addTodo({ ...todo, _id: makeid(36) });
       setTodo({ ...todo, description: "" });
     }
   }
 
   return (
-    <form className="taskForm " onSubmit={(e) => handleSubmit(todo, e)}>
-      <input
-        className="taskInput darkShadow"
-        placeholder="Add a task"
-        type="text"
-        value={todo.description}
-        onChange={handleTaskInputChange}
-      />
-      {/* <input
-        
-        className="taskBTN"
-        input="click"
-        value="+"
-      /> */}
-    </form>
+    <>
+      <form className="taskForm " onSubmit={handleSubmit}>
+        <input
+          className="taskInput darkShadow"
+          placeholder="Add a task"
+          type="text"
+          value={todo.description}
+          onChange={handleTaskInputChange}
+        />
+
+        <input className="taskBTN" input="click" value="+" />
+      </form>
+      <input value={todo.dueDate} className="dateInput" type="date" />
+    </>
   );
 }
