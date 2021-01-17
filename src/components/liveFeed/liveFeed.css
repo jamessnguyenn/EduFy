@@ -1,0 +1,62 @@
+.live-feed{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    background-color:var(--main-white);
+    
+}
+.feed-title{
+    text-align:center;
+    color: var(--main-dark);
+}
+.post{
+    display:flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right:auto;
+    background-color: white;
+    height: 120px;
+    border: 0.5px solid grey;
+    margin-top:10px;
+    width:800px;
+    padding:20px;
+    box-shadow: 0 0 4px;
+    margin-bottom: 20px;
+}
+.post-image{
+    height:200px;
+}
+.avatar-image{
+ 
+    width:120px;
+    
+}
+.profile-container{
+    display:flex;
+    flex-direction:row;
+    height:100%;
+}
+.avatar{
+    width:20%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+.description{
+    margin-top:10px;
+   display:flex;
+  
+    
+}
+.name h2, .name label{
+    margin: 0px;
+}
+
+.description p{
+    font-size:20px;
+
+}
+
+.status{
+    margin:auto;
+}

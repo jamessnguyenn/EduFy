@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from "react";
 import "../focusMode/focusMode.css";
 import CodingSVG from "../../img/coding.svg";
+import Switch from "react-switch";
+import axios from 'axios';
 
-export default function FocusMode() {
+export default function FocusMode({user}) {
   const [isFocusMode, setFocusMode] = useState(false);
   const [userOnBrowser, setUserOnBrowser] = useState(true);
-  const handleClick = () => setFocusMode(!isFocusMode);
+  const [checked, setChecked] = useState(false);
 
+  const handleChange = (on) =>{ 
+    setFocusMode(on);
+    setChecked(on);
+  };
   if (isFocusMode && !userOnBrowser) {
-    alert("Stop switching tabs");
+   
   }
 
   // Got this check method to check for if user switched tab from:
@@ -16,7 +22,6 @@ export default function FocusMode() {
 
   // User has switched back to the tab
   const onFocus = () => {
-    console.log(123);
     setUserOnBrowser(true);
   };
 
@@ -25,27 +30,43 @@ export default function FocusMode() {
     setUserOnBrowser(false);
   };
 
-  useEffect(() => {
-    setInterval(() => {
-      window.addEventListener("focus", onFocus);
-      window.addEventListener("blur", onBlur);
-      // Specify how to clean up after this effect:
-      return () => {
-        window.removeEventListener("focus", onFocus);
-        window.removeEventListener("blur", onBlur);
-      };
-    }, 2000);
-  }, []);
+  useEffect(() =>{
+    window.addEventListener("focus", onFocus);
+    window.addEventListener("blur", onBlur);
+  },[])
+
+  useEffect(()=>{
+    if(isFocusMode && !userOnBrowser){
+      alert("Please stay on the browser and continue studying! You've lost 10 health.");
+      document.title = "Come back!";
+      var newHealth = user.health -10;
+      const health ={
+        health: newHealth
+      }
+      axios.put(`https://edufy-api.herokuapp.com/${user._id}/health`, health, {
+        headers:{
+          'Authorization': 'Bearers ' + localStorage.getItem('token')
+        }
+      })
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err=>{
+        console.log(err);
+      })
+    }else{
+    document.title ="Your Profile";
+    }
+  },[isFocusMode, userOnBrowser])
+  
 
   return (
     <div className="templateBG focusModeContainer shadow">
       <h2 className="focusTitle"> Focus Mode </h2>
-      <input
-        type="checkbox"
-        class="toggle-switch-checkbox"
-        name="toggleSwitch"
-        id="toggleSwitch"
-        onClick={handleClick}
+      <Switch
+        onChange={handleChange}
+        checked={checked}
+        onColor='#437fc7'
       />
       <label class="toggle-switch-label" for="toggleSwitch"></label>
       <img src={CodingSVG} className="codingSVG" alt="coding" />

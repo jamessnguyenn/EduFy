@@ -3,19 +3,23 @@ import "./motivation.css";
 
 export default function Motivation() {
   const [quote, setQuote] = useState(
-    "Don't count the days make the days count"
+    "Don't count the days make the days count."
   );
   let quotesArr = [
-    "Don't count the days make the days count",
-    "If people are doubting how far you can go , go so far that you can't hear them anymore",
-    "Why stop dreaming when you are awake",
-    "The only time you should look back, is to see how far you've come",
-    "I am in charge of how I feel and today I am choosing happiness",
-    "Be willing to go alone! Many who started with you won't finish with you",
-    "If you're making mistakes it mean you're out there doing something",
-    "Love the life you live. Live the life you love",
-    "Give your best everyday",
+    "Don't count the days make the days count.",
+    "If people are doubting how far you can go , go so far that you can't hear them anymore.",
+    "Why stop dreaming when you are awake.",
+    "The only time you should look back, is to see how far you've come.",
+    "I am in charge of how I feel and today I am choosing happiness.",
+    "Be willing to go alone! Many who started with you won't finish with you.",
+    "If you're making mistakes it mean you're out there doing something.",
+    "Love the life you live. Live the life you love.",
+    "Give your best everyday.",
     "Dream Believe. Do. Repeat.",
+    "Difficult Roads lead to Beautiful Destinations",
+    "Be Optimistic.",
+    "You Got This.",
+    "Fuel Your Dream."
   ];
 
   // Got random number genrator from:
