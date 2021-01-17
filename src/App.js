@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SignUpPage from "./components/signup/signUp";
 import LoginPage from "./components/login/login";
 import LiveFeedPage from "./components/liveFeed/liveFeed";
+import Store from "./components/store/store";
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
         </Route>
         <Route path="/liveFeed">
           <LiveFeedPage />
+        </Route>
+        <Route path='/store'>
+          <Store/>
         </Route>
       </Switch>
     </Router>

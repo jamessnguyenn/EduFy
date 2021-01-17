@@ -5,6 +5,10 @@ import { faCoins, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 export default function navbar() {
+
+  const logout = ()=>{
+    localStorage.clear();
+  }
   return (
     <div className="navBar">
       <Link to="/profile">
@@ -29,6 +33,9 @@ export default function navbar() {
           <FontAwesomeIcon className="coinIcon" icon={faCoins} />
           1020
         </div>
+        <a href = '/' onClick={logout}>
+        <small className="navLink">Logout </small>
+        </a>
       </div>
     </div>
   );

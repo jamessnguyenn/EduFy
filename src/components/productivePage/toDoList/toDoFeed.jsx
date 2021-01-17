@@ -1,7 +1,7 @@
 import React from "react";
 import Todo from "./todo";
 
-export default function ToDoFeed(todos, removeTodo, toggleComplete) {
+export default function ToDoFeed({todos, removeTodo, toggleComplete}) {
   return (
     <div>
       {todos.map((todo) => (

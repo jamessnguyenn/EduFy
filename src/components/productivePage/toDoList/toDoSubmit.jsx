@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function ToDoSubmit(addTodo) {
+export default function ToDoSubmit({addTodo}) {
   const [todo, setTodo] = useState({
     _id: "",
     checked: false,

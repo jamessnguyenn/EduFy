@@ -27,12 +27,12 @@ export default function PomoTimer({user}) {
     if(counter>0){
       const post = {
         avatar: user.avatar,
-        description: user.firstName + " "+ user.lastName + " completed"+counter+" pomodoros. Keep it up!",
+        description: user.firstName + " completed"+counter+" pomodoros. Keep it up!",
         name: user.firstName + " "+ user.lastName,
         location: user.location,
         badge: false,
       }
-      axios.post(`https://edufy-api.herokuapp.com/posts`, post, {
+      /**axios.post(`https://edufy-api.herokuapp.com/posts`, post, {
         headers:{
           'Authorization': 'Bearers ' + localStorage.getItem('token')
         }
@@ -42,7 +42,7 @@ export default function PomoTimer({user}) {
       })
       .catch(err=>{
         console.log(err);
-      })
+      })**/
 
     }
   },[counter])

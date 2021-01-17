@@ -43,7 +43,7 @@ export default function FocusMode({user}) {
       const health ={
         health: newHealth
       }
-      axios.put(`https://edufy-api.herokuapp.com/${user._id}/health`, health, {
+    /**   axios.put(`https://edufy-api.herokuapp.com/${user._id}/health`, health, {
         headers:{
           'Authorization': 'Bearers ' + localStorage.getItem('token')
         }
@@ -53,7 +53,7 @@ export default function FocusMode({user}) {
       })
       .catch(err=>{
         console.log(err);
-      })
+      })**/
     }else{
     document.title ="Your Profile";
     }

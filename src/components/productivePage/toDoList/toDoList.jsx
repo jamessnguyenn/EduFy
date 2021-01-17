@@ -22,7 +22,7 @@ export default function ToDoList() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
   }, [todos]);
 
-  function addTodo(todo) {
+ const addTodo = (todo)=> {
     // adds new todo to beginning of todos array
     setTodos([todo, ...todos]);
   }
@@ -56,12 +56,12 @@ export default function ToDoList() {
         <button className="taskButton btnMiddle"> Finish </button>
         <button className="taskButton btnRight"> Unfinshed </button>
       </div>
-      {/* 
+      {
       <TodoFeed
         todos={todos}
         removeTodo={removeTodo}
         toggleComplete={toggleComplete}
-      /> */}
+      /> }
     </div>
   );
 }

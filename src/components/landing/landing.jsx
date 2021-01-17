@@ -2,15 +2,24 @@ import React, { useEffect } from "react";
 import "../landing/landing.css"
 import planSVG from "./img/plan.svg";
 import newIdeasSVG from "./img/newIdeas.svg";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import NavBar from '../unloggedNavBar/unloggedNavBar';
+import { useState } from "react";
 
 
-function landingPage() {
-
-
+function LandingPage() {
     
-
+    const history = useHistory();
+    const [redirect, setRedirect] = useState(false);
+    useEffect(() =>{
+        if(localStorage.getItem('user_id') && localStorage.getItem('token')){
+           setRedirect(true);
+        }
+    },[])
+    
+    if(redirect){
+        history.push('/profile');
+    }
 
     return (
         <div className="about">
@@ -111,10 +120,11 @@ function landingPage() {
                     <Link to="/signup">
                         <button className="footer-button"> Join now </button>
                     </Link>
+                    <div className="attribution">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
                 </div>
             </div>
         </div>
     );
 
 }
-export default landingPage;
+export default LandingPage;
