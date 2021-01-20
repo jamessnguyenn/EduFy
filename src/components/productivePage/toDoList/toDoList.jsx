@@ -5,7 +5,7 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import ToDoSubmit from "./toDoSubmit.jsx";
 import TodoFeed from "./toDoFeed";
 
-export default function ToDoList() {
+export default function ToDoList({ addCoins }) {
   const [todos, setTodos] = useState([]);
   const [filter, setFilter] = useState("all");
 
@@ -41,6 +41,7 @@ export default function ToDoList() {
             checked: !todo.checked,
           };
         }
+        addCoins(20);
         return todo;
       })
     );

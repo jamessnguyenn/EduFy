@@ -26,8 +26,8 @@ function App() {
         <Route path="/liveFeed">
           <LiveFeedPage />
         </Route>
-        <Route path='/store'>
-          <Store/>
+        <Route path="/store">
+          <Store />
         </Route>
       </Switch>
     </Router>

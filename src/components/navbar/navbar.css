@@ -13,11 +13,11 @@
 
 .navLink {
   margin-left: 30px;
-  font-size:20px;
+  font-size: 20px;
   color: var(--main-grey);
 }
-.navLink:hover{
-  color:white;
+.navLink:hover {
+  color: white;
 }
 
 .navEnd {
@@ -32,14 +32,14 @@
 .progressBars {
   background-color: var(--main-dark);
   background: var(--main-dark);
-  width: 200px;
+  width: 100%;
   height: 30px;
   border-radius: 25px;
 }
 
 .loadingBars {
   background: var(--main-gold);
-  width: 50%;
+  /* width: 50%; */
   height: 100%;
   border-radius: 25px;
   /* width: 30%; */
