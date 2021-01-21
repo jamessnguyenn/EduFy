@@ -139,6 +139,7 @@ p{
   padding-right:60px;
   color: white;
   border:none;
+  outline:none;
 }
 .join-button:hover, .footer-button:hover{
   background-color:#4d91e6;
@@ -146,13 +147,14 @@ p{
   outline:none;
 
 }
-.join-button:focus, .footer-button:focus{
+.join-button:active, .footer-button:active{
   background-color:#547baa;
   cursor:pointer;
   outline:none;
 }
 
 .footer-button{
+  outline:none;
   margin-top: 20px;
   margin-bottom: 40px;
   border-radius: 60px;
@@ -171,7 +173,9 @@ p{
 .bannerTitle{
   color: white;
   font-size: 50px;
+  font-weight: normal;
 }
+
 
 .banner{
   height: 50vh;

@@ -20,6 +20,7 @@
   .signUp-form {
     width: 80%;
     margin: auto;
+    height:80%;
    
   }
   
@@ -84,6 +85,7 @@
   }
   
   .register-button {
+    outline:none;
     margin-top: 20px;
     border-radius: 60px;
     background-color:var(--main-color) ;
@@ -94,13 +96,13 @@
     border:none;
   }
   
-  .register-button:hover:enabled{
+  .register-button:enabled:hover{
     background-color:#4d91e6;
     cursor:pointer;
     outline:none;
   
   }
-  .register-button:focus{
+  .register-button:active{
     background-color:#547baa;
     cursor:pointer;
     outline:none;

@@ -7,11 +7,23 @@ import { useHistory } from 'react-router-dom';
 
 
 function Login(){
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [disabled, setDisabled] = useState(true);
     const [error, setError] = useState(false);
     const history = useHistory();
+
+    const [redirect, setRedirect] = useState(false);
+    useEffect(() =>{
+        if(localStorage.getItem('user_id') && localStorage.getItem('token')){
+           setRedirect(true);
+        }
+    },[])
+    
+    if(redirect){
+        history.push('/profile');
+    }
 
     useEffect(()=>{
         checked();
@@ -36,7 +48,6 @@ function Login(){
     }
     function handleLogin(e) {
         e.preventDefault();
-        setDisabled(true);
         const user= { email: email, password: password }
         axios.post("https://edufy-api.herokuapp.com/users/auth",user)
         .then(res=>{
@@ -44,8 +55,8 @@ function Login(){
             localStorage.setItem('user_id', res.data.user_id);
             history.push('/profile')
         })
-        .catch(err => setError(true))
-        setDisabled(false);
+        .catch(err =>{ setError(true);  setDisabled(true);})
+       
     }
 
     return(
@@ -55,14 +66,14 @@ function Login(){
                 <h1 className = "login-title">Welcome Back</h1>
                 <div className = "login-email-field">
                 <label className = "form-label">Email</label>
-                <input className = "login-input-field" type ="text" onChange={emailChange} value={email}/>
+                <input className={error? "login-field-Error": "login-input-field"} type ="text" onChange={emailChange} value={email}/>
                 </div>
                 <div className = "login-password-field">
                 <label className = "form-label">Password</label>
-                <input className = "login-input-field" type ="password" onChange={passChange} value={password}/>
+                <input  className={error? "login-field-Error": "login-input-field"} type ="password" onChange={passChange} value={password}/>
                 </div>
                 <div className = "error-label-container">
-               {error && <label>Invalid Password or Email</label> }
+               {error && <label className="error-message">Invalid Password or Email</label> }
                 </div>
                 <div className ="signIn-button-container">
                     

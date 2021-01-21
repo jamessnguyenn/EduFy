@@ -18,6 +18,18 @@ const[disabled, setDisabled] = useState(true);
 const[passwordError, setPasswordError] = useState(false);
 const[emailError, setEmailError] = useState(false);
 const history = useHistory();
+const [redirect, setRedirect] = useState(false);
+
+
+useEffect(() =>{
+    if(localStorage.getItem('user_id') && localStorage.getItem('token')){
+       setRedirect(true);
+    }
+},[])
+
+if(redirect){
+    history.push('/profile');
+}
 
 const changeFirstName = (e)=> {
   setFirstName(e.target.value);

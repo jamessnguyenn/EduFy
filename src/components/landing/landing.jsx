@@ -26,7 +26,7 @@ function LandingPage() {
             <NavBar />
             <div className="banner">
                 <div className="banner-container">
-                    <h1 className="bannerTitle"> Eudfy - Education For You</h1>
+                    <h1 className="bannerTitle">Education For You</h1>
                     <Link to="/signup">
                         <button className="join-button"> Join now </button>
                     </Link>

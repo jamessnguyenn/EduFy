@@ -18,7 +18,7 @@
  .login-form{
      width: 80%;
      margin: auto;
-     height: 60%;
+     height: 80%;
  }
  .login-container h1{
      font-size:4vw;
@@ -37,8 +37,19 @@
      margin:auto;
      padding: 10px;
  }
- 
+ .login-field-Error {
+    margin:5px;
+    width: 100%;
+    outline: none;
+    padding-left: 10px;
+    font-size: 1.2rem;
+    height: 50px;
+    border: 1px solid red;
+    border-radius: 10px;
+   
+  }
  .login-input-field{
+    margin:5px;
      width: 100%;
      outline: none;
      padding-left: 10px;
@@ -54,33 +65,35 @@
      align-content: center;
    }
  .signin-btn{
+     outline:none;
      background-color: var(--main-color);
      color: white;
      border:none;
      font-size: 1.5rem;
      width: 40%;
      margin-top:10px;
-     margin-bottom: 30px;
+     margin-bottom: 15px;
      padding: 10px 0;
      border-radius: 18px;
      transition: ease-in-out 0.3s;
      cursor: pointer;
  }  
- .signin-btn:hover:enabled {
+
+ .signin-btn:enabled:hover {
      background-color: #4d91e6;
    }
-   .signin-btn:focus{
-       outline:none;
+   .signin-btn:enabled:active{
+     background-color:#547baa;
    }
  .signUp-label-container{
      width:100%;
-     margin:auto;
      display:flex;
      flex-direction: row;
      justify-content: center;
      align-content: center;
  } 
  .login-signup-label{
+ 
      color:var(--main-color);    
  }
  .login-signup-label:hover{
@@ -101,7 +114,10 @@
  }
  .error-label-container{
      margin: auto;
-        width:50%;
+    width:50%;
+        
         color:red;
     }
- 
+ .error-message{
+     margin-left: 10px;
+ }
