@@ -8,20 +8,24 @@
   padding-right: 20px;
   align-items: center;
   background-color: var(--main-color);
+  position:sticky;
+  top:0;
+  
 }
 
 .navbar-Title{
   margin-left:60px;
+  cursor:pointer;
 }
 
 .unloggedNavLink {
-  margin-right: 30px;
+  margin-right: 22px;
   font-size:23px;
-  font-weight:bold;
-  color: var(--main-white);
+  
+  color: white;
 }
 .unloggedNavLink:hover{
-  color:rgb(32, 30, 30);
+  color:var(--main-grey);
 }
 
 .unloggednavEnd {
@@ -35,9 +39,9 @@
 
 .sign-up-button{
   outline:none;
-  background-color: var(--main-white);
+  background-color:  var( --main-dark);
   font-size: 20px;
-  
+  color:white;
   border-radius: 60px;
   border-style: none;
   padding: 5px;
@@ -46,13 +50,13 @@
   
 }
 .sign-up-button:hover{
-  background-color: rgb(32, 30, 30);
-  color:white;
+  background-color:var(--main-white);
+  color:black;
   cursor: pointer;
   outline:none;
 }
 .sign-up-button:active{
   outline:none;
-   background-color:  rgb(56, 54, 54);
+   background-color:  rgb(226, 224, 224);
 }
 

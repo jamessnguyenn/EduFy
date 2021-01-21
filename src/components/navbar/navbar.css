@@ -4,7 +4,8 @@
   display: flex;
   flex-direction: row;
   width: auto;
-
+  position:sticky;
+  top:0;
   padding-left: 20px;
   padding-right: 20px;
   align-items: center;
