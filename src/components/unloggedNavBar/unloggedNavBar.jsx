@@ -9,7 +9,7 @@ export default function navbar() {
   return (
     <div className="unloggednavBar">
       <Link to="/">
-      <h1 className="navbar-Title"> Edufy </h1>
+      <h1 className="navbar-Title"> EduFy </h1>
       </Link>
       <div className="unloggednavEnd">
       <Link to="/login">
