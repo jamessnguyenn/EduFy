@@ -77,7 +77,7 @@ function Login(){
                 </div>
                 <div className ="signIn-button-container">
                     
-                    <button type = "submit" disabled={disabled} className = "signin-btn">Sign In</button>
+                    <input type ="submit" className = "signin-btn"  disabled={disabled} value="Sign In"/>
                 </div>
             <div className = "signUp-label-container">
                 <label className="community-label">Don't have an account?</label>
