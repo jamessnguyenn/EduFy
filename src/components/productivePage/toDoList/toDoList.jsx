@@ -54,8 +54,8 @@ export default function ToDoList({ addCoins }) {
 
   console.log(todos);
   return (
-    <div className=" templateBG todoContainer darkShadow ">
-      <h3 className="toDoName"> Tasks </h3>
+    <div className=" templateBG todoContainer lightShadow ">
+      <h2 className="toDoName"> Tasks To Accomplish </h2>
       <div className="toDoInputsContainer">
         <ToDoSubmit addTodo={addTodo} />
       </div>
