@@ -162,12 +162,35 @@ taskInput::-ms-input-placeholder {
   justify-content: start;
   align-items: center;
   border: 0px;
-  overflow: scroll;
-  overflow-x: hidden;
+  overflow-y: scroll;
+  overflow-x:hidden;
   padding: 20px;
   background-color: #cec8c84f;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
+.toDoFeed::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+.toDoFeed::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius:10px;
+  
+  margin-bottom: 20px;
+}
+
+/* Handle */
+.toDoFeed::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius:10px;
+}
+
+/* Handle on hover */
+.toDoFeed::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 .task {
   border-radius: 12px;
   background-color: rgb(17, 17, 17);
