@@ -62,14 +62,16 @@ export default function ToDoList({ addCoins }) {
 
       <div className="taskButtons">
         <button
-          className={filter === "all" ? "taskButton active" : " taskButton"}
+          className={filter === "all" ? "taskButton isActive" : " taskButton"}
           onClick={() => changeFilter("all")}
         >
           {" "}
           All{" "}
         </button>
         <button
-          className={filter === "active" ? "taskButton active" : " taskButton"}
+          className={
+            filter === "active" ? "taskButton isActive" : " taskButton"
+          }
           onClick={() => changeFilter("active")}
         >
           {" "}
@@ -77,7 +79,7 @@ export default function ToDoList({ addCoins }) {
         </button>
         <button
           className={
-            filter === "complete" ? "taskButton active" : " taskButton"
+            filter === "complete" ? "taskButton isActive" : " taskButton"
           }
           onClick={() => changeFilter("complete")}
         >

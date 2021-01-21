@@ -5,13 +5,12 @@ import "./pomoTimer.css";
 import axios from "axios";
 import "../productivePage.css";
 
-
-export default function PomoTimer({user}) {
+export default function PomoTimer({ user, addCoins }) {
   //let [timerMin, setTimerMin] = useState("24");
   const [isPaused, setIsPaused] = useState(true);
   const [timerSecs, setTimerSec] = useState("1500");
   const [timerMode, setTimerMode] = useState("pomodoro");
-  const[counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(0);
   //Converting total time to display
   let minutes = Math.floor(timerSecs / 60);
   let seconds = Math.floor(timerSecs - 60 * minutes);
@@ -21,17 +20,17 @@ export default function PomoTimer({user}) {
 
   let intervalRef = useRef();
 
-
-  useEffect(()=>{
+  useEffect(() => {
     console.log(counter);
-    if(counter>0){
+    if (counter > 0) {
       const post = {
         avatar: user.avatar,
-        description: user.firstName + " completed"+counter+" pomodoros. Keep it up!",
-        name: user.firstName + " "+ user.lastName,
+        description:
+          user.firstName + " completed" + counter + " pomodoros. Keep it up!",
+        name: user.firstName + " " + user.lastName,
         location: user.location,
         badge: false,
-      }
+      };
       /**axios.post(`https://edufy-api.herokuapp.com/posts`, post, {
         headers:{
           'Authorization': 'Bearers ' + localStorage.getItem('token')
@@ -43,35 +42,31 @@ export default function PomoTimer({user}) {
       .catch(err=>{
         console.log(err);
       })**/
-
     }
-  },[counter])
+  }, [counter]);
 
-  useEffect(()=>{
+  useEffect(() => {
     if (timerSecs === 0) {
+      addCoins(10);
       if (timerMode === "pomodoro") {
-        setCounter(prevCounter => prevCounter+1);
+        setCounter((prevCounter) => prevCounter + 1);
         setTimerSec(1500);
-      }else if(timerMode == "shortBreak"){
+      } else if (timerMode == "shortBreak") {
         setTimerSec(300);
-      }else{
+      } else {
         setTimerSec(600);
       }
       setIsPaused(true);
-     
     }
-
-  },[timerSecs])
+  }, [timerSecs]);
 
   useEffect(() => {
     const id = setInterval(() => {
-      
       {
         isPaused
-          ?clearInterval(intervalRef.current) 
+          ? clearInterval(intervalRef.current)
           : setTimerSec(timerSecs - 1);
       }
-      
     }, 1000);
     intervalRef.current = id;
     return () => clearInterval(intervalRef.current);

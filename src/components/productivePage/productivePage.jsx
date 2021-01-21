@@ -7,19 +7,18 @@ import FocusMode from "./focusMode/focusMode";
 import ToDoList from "./toDoList/toDoList";
 
 export default function ProductivePage() {
-  const [hp, setHP] = useState(50);
+  let [hp, setHP] = useState(50);
   let [coins, setCoins] = useState(50);
 
   function addHP(val) {
     setHP((hp = hp + val));
   }
   function subHP(val) {
-    setHP((hp = hp + val));
+    setHP((hp = hp - val));
   }
   function addCoins(val) {
     setCoins((coins = coins + val));
   }
-
   function subCoins(val) {
     setCoins((coins = coins - val));
   }
@@ -29,12 +28,12 @@ export default function ProductivePage() {
       <Navbar hp={hp} coins={coins} />
       <div className="productivityPage">
         <div className="row">
-          <PomodoroTimer />
+          <PomodoroTimer addCoins={addCoins} />
           <Motivation />
         </div>
         <div className="row">
           <ToDoList addCoins={addCoins} />
-          <FocusMode />
+          <FocusMode subHP={subHP} />
         </div>
       </div>
     </>

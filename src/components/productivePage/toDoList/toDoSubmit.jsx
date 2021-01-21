@@ -41,17 +41,23 @@ export default function ToDoSubmit({ addTodo }) {
   return (
     <>
       <form className="taskForm " onSubmit={handleSubmit}>
-        <input
-          className="taskInput darkShadow"
-          placeholder="Add a task"
-          type="text"
-          value={todo.description}
-          onChange={handleTaskInputChange}
-        />
+        <div className="taskBTNContainer darkshadow">
+          <input
+            className="taskInput"
+            placeholder="Add a task"
+            type="text"
+            value={todo.description}
+            onChange={handleTaskInputChange}
+          />
+          <div className="taskBTN" onClick={handleSubmit}>
+            {" "}
+            +{" "}
+          </div>
+        </div>
 
         <input
           value={todo.dueDate}
-          className="dateInput"
+          className="dateInput darkShadow"
           type="date"
           onChange={handleDateInputChange}
         />
