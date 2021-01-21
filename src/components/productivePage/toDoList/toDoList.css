@@ -4,8 +4,8 @@
   grid-template-rows: 15% 15% 8% 1fr;
   width: 50%;
   row-gap: 0px;
-  border-top-color: 25px solid red;
 
+  background: linear-gradient(#107bf4, #00bafd85, white);
   height: 530px;
   margin-bottom: 30px;
 }
@@ -13,10 +13,13 @@
 .toDoName {
   grid-row: 1/2;
   grid-column: 1/4;
-  text-align: center;
+  padding-left: 10%;
+  text-align: start;
   margin-top: 0;
   margin-bottom: 0px;
   padding-top: 20px;
+  color: white;
+  font-family: "Oxygen", sans-serif;
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
   background: linear-gradient(to right, #107bf4, #00bafd85);
@@ -162,7 +165,7 @@ taskInput::-ms-input-placeholder {
   overflow: scroll;
   overflow-x: hidden;
   padding: 20px;
-  background-color: #e6e9ec;
+  background-color: #cec8c84f;
 }
 
 .task {
