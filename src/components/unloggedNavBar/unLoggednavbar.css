@@ -10,14 +10,18 @@
   background-color: var(--main-color);
 }
 
+.navbar-Title{
+  margin-left:60px;
+}
+
 .unloggedNavLink {
   margin-right: 30px;
-  font-size:20px;
+  font-size:23px;
   font-weight:bold;
   color: var(--main-white);
 }
 .unloggedNavLink:hover{
-  color:black
+  color:rgb(32, 30, 30);
 }
 
 .unloggednavEnd {
@@ -30,6 +34,7 @@
 }
 
 .sign-up-button{
+  outline:none;
   background-color: var(--main-white);
   font-size: 20px;
   
@@ -41,12 +46,13 @@
   
 }
 .sign-up-button:hover{
-  background-color:  black;
+  background-color: rgb(32, 30, 30);
   color:white;
   cursor: pointer;
-}
-.sign-up-button:focus{
   outline:none;
-   background-color:  #d7d7d8;
+}
+.sign-up-button:active{
+  outline:none;
+   background-color:  rgb(56, 54, 54);
 }
 

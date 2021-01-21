@@ -8,10 +8,9 @@ import {Link} from'react-router-dom';
 export default function navbar() {
   return (
     <div className="unloggednavBar">
-      <h1> Edufy </h1>
-
-      
-
+      <Link to="/">
+      <h1 className="navbar-Title"> Edufy </h1>
+      </Link>
       <div className="unloggednavEnd">
       <Link to="/login">
        <small className="unloggedNavLink">Login</small>
