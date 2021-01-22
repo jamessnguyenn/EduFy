@@ -174,7 +174,7 @@
 }
 .taskButton.isActive:hover {
   color: black;
-  cursor: default;
+ 
   background-color: #e6e9ec;
 }
 .taskButton:hover{

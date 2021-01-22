@@ -37,11 +37,16 @@
 
 .pomoTool {
   margin-right: 20px;
-  opacity: 65%;
+  opacity: 0.65;
+}
+.pomoTool:hover {
+  margin-right: 20px;
+  opacity: 0.8;
+  cursor: pointer;
 }
 .pomoTool.active {
   color: white;
-  opacity: 100%;
+  opacity: 1;
 }
 
 .timer {
