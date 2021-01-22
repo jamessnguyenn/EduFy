@@ -41,7 +41,7 @@ function LandingPage() {
                     <div className="blueLine"></div>
                     <div className="prize-image">
                     <p className="edufyDef">
-                              Edufy is EDU-cation For You! We're not just any <br/> other productivity application. 
+                              EduFy is EDU-cation For You! We're not just any <br/> other productivity application. 
                               Our productivity app was made  <br/>to not only provide motivation but to also allow you <br/>
                                to celebrate your achievements.<br/>
                                <br/> 

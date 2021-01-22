@@ -11,7 +11,7 @@ export default function Navbar({ hp, coins }) {
   return (
     <div className="navBar">
       <Link to="/profile">
-        <h1> Edufy </h1>
+        <h1> EduFy </h1>
       </Link>
       <div className="navTitle">
         <Link to="/liveFeed">
