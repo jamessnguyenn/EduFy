@@ -19,6 +19,7 @@ const[passwordError, setPasswordError] = useState(false);
 const[emailError, setEmailError] = useState(false);
 const history = useHistory();
 const [redirect, setRedirect] = useState(false);
+const[errorLabel, setErrorLabel] = useState(false);
 
 
 useEffect(() =>{
@@ -41,6 +42,7 @@ const changeLastName = (e)=> {
 }
 
 const changeEmail = (e)=> {
+  setErrorLabel(false);
   setEmail(e.target.value);
   enableButton();
   setEmailError(!validEmailRegex.test(e.target.value));
@@ -60,7 +62,7 @@ const changeLocation = (e)=> {
 
 const submit = (e)=>{
   e.preventDefault();
-  setDisabled(true);
+ 
   const user = {
     firstName: firstName,
     lastName: lastName,
@@ -74,8 +76,8 @@ const submit = (e)=>{
     localStorage.setItem('user_id', res.data.user_id);
    history.push('/profile')
   })
-  .catch(err => setEmailError(true));
-  setDisabled(false);
+  .catch(err =>{ setEmailError(true); setErrorLabel(true); setDisabled(true);});
+  
 
 }
 
@@ -110,13 +112,12 @@ const enableButton = ()=>{
                 <input type="text" placeholder="Howell" className="field" onChange={changeLastName}/>
               </div>
             </div>
-
             <div className="email-field">
-              <label className="form-label">Email</label>
+              <label className="form-label">Email</label> 
               <input type="email" placeholder="simon.cowell@gmail.com"  className={emailError? "field-Error": "field"} name="email" onChange={changeEmail}/>
-              
+             {errorLabel&& <label className="signup-error-message">Email Already Exists</label>} 
             </div>
-
+           
             <div className="password-field">
               <label className="form-label">Password</label>
               <input type="password" className={passwordError? "field-Error": "field"} min="8" placeholder="8 Character Minimum" name="password" onChange={changePassword}
@@ -127,9 +128,11 @@ const enableButton = ()=>{
               <input type="location" placeholder="San Jose, CA"className="field" name="location" onChange={changeLocation}
               />
             </div>
+            
             <div className="submit-btn-container">
               <input type="submit" value="Join Now" className="register-button" disabled={disabled}
               />
+              
             </div>
           </div>
         </form>
