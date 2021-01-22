@@ -75,7 +75,7 @@ export default function ToDoList({ addCoins }) {
           onClick={() => changeFilter("active")}
         >
           {" "}
-          Finish{" "}
+          Completed{" "}
         </button>
         <button
           className={
@@ -84,7 +84,7 @@ export default function ToDoList({ addCoins }) {
           onClick={() => changeFilter("complete")}
         >
           {" "}
-          Unfinshed{" "}
+          To Be Done{" "}
         </button>
       </div>
 

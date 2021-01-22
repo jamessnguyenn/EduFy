@@ -5,6 +5,10 @@ import { faCoins, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 export default function Navbar({ hp, coins }) {
+
+  
+
+
   const logout = () => {
     localStorage.clear();
   };
@@ -25,8 +29,10 @@ export default function Navbar({ hp, coins }) {
       <div className="navEnd">
         <div className="progressBars">
           <div className="loadingBars" style={{ width: `${hp}%` }}>
+            <div className="icons">
             <FontAwesomeIcon className="heartIcon" icon={faHeart} />
             {`${hp}/100`}
+            </div>
           </div>
         </div>
 

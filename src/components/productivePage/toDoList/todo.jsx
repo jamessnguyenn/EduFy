@@ -17,7 +17,7 @@ export default function Todo({ todo, toggleComplete, removeTodo }) {
       {<h4 className="taskName"> {todo.description} </h4>}
       <div className="circleContainer">
         <div
-          className={todo.checked ? "circle active" : "circle"}
+          className={todo.checked ? "circle checked" : "circle"}
           onClick={handleCheckboxClick}
         >
           {todo.checked ? (
