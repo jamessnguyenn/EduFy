@@ -5,7 +5,7 @@
   width: 50%;
   row-gap: 0px;
 
-  background: linear-gradient(#107bf4, #00bafd85, white);
+  background: linear-gradient(#107af47c, #00bafd85, white);
   height: 530px;
   margin-bottom: 30px;
 }
@@ -162,10 +162,10 @@ taskInput::-ms-input-placeholder {
   justify-content: start;
   align-items: center;
   border: 0px;
-  overflow: scroll;
+  /* overflow: scroll; */
   overflow-x: hidden;
   padding: 20px;
-  background-color: #cec8c84f;
+  background-color: #e6dbdb8f;
 }
 
 .task {
@@ -235,4 +235,13 @@ taskInput::-ms-input-placeholder {
   text-align: center;
   align-self: center;
   font-size: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  .todoContainer {
+    width: 100%;
+    height: 80vh;
+    margin-top: 0;
+    padding-top: 0;
+  }
 }

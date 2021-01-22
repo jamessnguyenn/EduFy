@@ -38,3 +38,9 @@
   justify-content: space-evenly;
   border: 0 40px;
 }
+
+@media only screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+}
