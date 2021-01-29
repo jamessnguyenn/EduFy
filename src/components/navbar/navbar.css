@@ -36,19 +36,23 @@
   width: 100%;
   height: 30px;
   border-radius: 25px;
-}
-
-.loadingBars {
-  background: var(--main-gold);
-  /* width: 50%; */
-  height: 100%;
-  border-radius: 25px;
-  /* width: 30%; */
-  display: flex;
-  flex-direction: row;
-  padding-left: 10px;
   justify-content: start;
   align-items: center;
+}
+.icons{
+  display:flex;
+  color:rgb(105, 90, 4);
+  padding-left:10px;
+}
+.loadingBars {
+  background: var(--main-gold);
+  height: 100%;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  transition:1s ease;
 }
 
 .coinsContainer {

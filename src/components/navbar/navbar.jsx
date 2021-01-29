@@ -7,6 +7,7 @@ import DropDown from "./dropDown.jsx";
 
 export default function Navbar({ hp, coins }) {
   const [dropDown, setDrop] = useState(false);
+
   const logout = () => {
     localStorage.clear();
   };
@@ -27,8 +28,10 @@ export default function Navbar({ hp, coins }) {
       <div className="navEnd">
         <div className="progressBars">
           <div className="loadingBars" style={{ width: `${hp}%` }}>
-            <FontAwesomeIcon className="heartIcon" icon={faHeart} />
-            {`${hp}/100`}
+            <div className="icons">
+              <FontAwesomeIcon className="heartIcon" icon={faHeart} />
+              {`${hp}/100`}
+            </div>
           </div>
         </div>
 

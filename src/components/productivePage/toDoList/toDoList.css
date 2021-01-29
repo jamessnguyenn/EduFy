@@ -6,7 +6,7 @@
   row-gap: 0px;
 
   background: linear-gradient(#107af47c, #00bafd85, white);
-  height: 450px;
+  height: 50vh;
   margin-bottom: 30px;
 }
 
@@ -19,6 +19,7 @@
   margin-bottom: 0px;
   padding-top: 20px;
   color: white;
+  font-size: 1.5vw;
   font-family: "Oxygen", sans-serif;
   border-top-right-radius: 25px;
   border-top-left-radius: 25px;
@@ -50,15 +51,17 @@
 }
 
 .taskButton {
-  width: 33.33%;
+  outline: none;
+  width: calc(100% / 3);
   height: 100%;
   color: white;
   background-color: black;
   margin: 0px;
   padding: 0px;
-  border: px solid white;
+  border: 1px solid grey;
   border-top: 0px;
   border-bottom: 0px;
+  outline: none;
 }
 
 .taskForm {
@@ -71,12 +74,14 @@
   width: 100%;
 }
 .taskInput {
+  font-size: 1.2vw;
+  outline: none;
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
   border-color: black;
 
   width: 100%;
-  border-right-color: white;
+  border-right-color: grey;
   background-color: rgba(0, 0, 0, 0.85);
   text-align: center;
   margin: 0px;
@@ -84,20 +89,23 @@
   color: white;
 }
 
-taskInput::placeholder {
+.taskInput::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: white;
+  opacity: 0.8;
   /* Firefox */
 }
 
-taskInput:-ms-input-placeholder {
+.taskInput:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
   color: white;
+  opacity: 0.8;
 }
 
-taskInput::-ms-input-placeholder {
+.taskInput::-ms-input-placeholder {
   /* Microsoft Edge */
   color: white;
+  opacity: 0.8;
 }
 
 .taskBTNContainer {
@@ -123,17 +131,27 @@ taskInput::-ms-input-placeholder {
   align-items: center;
   font-size: 180%;
 }
-
+.taskBTN:hover {
+  cursor: pointer;
+  background-color: rgba(26, 25, 25, 0.85);
+}
+.taskBTN:active {
+  background-color: rgba(10, 10, 10, 0.85);
+}
 .dateInput {
+  padding: 10px;
+  font-size: 1vw;
+  outline: none;
   width: 25%;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.85);
-  margin-left: 12px;
   color: white;
   border-radius: 16px;
   border-color: black;
 }
-
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
 /* .btnLeft {
   border: 2px solid white;
   border-right-color: 4px solid white;
@@ -150,10 +168,17 @@ taskInput::-ms-input-placeholder {
 
 .taskButton.isActive {
   color: black;
+  background-color: #e6e9ec;
+}
+.taskButton.isActive:hover {
+  color: black;
 
   background-color: #e6e9ec;
 }
-
+.taskButton:hover {
+  cursor: pointer;
+  background-color: rgb(22, 22, 22);
+}
 .toDoFeed {
   grid-row: 4/5;
   grid-column: 1/4;
@@ -162,7 +187,7 @@ taskInput::-ms-input-placeholder {
   justify-content: start;
   align-items: center;
   border: 0px;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   padding: 20px;
   background-color: #cec8c84f;
@@ -200,7 +225,9 @@ taskInput::-ms-input-placeholder {
   grid-row-gap: 14px;
   color: var(--main-color);
   width: 65%;
-  height: 22%;
+  height: 50px;
+  padding-bottom: 10px;
+  padding-top: 5px;
   margin-bottom: 10px;
 }
 
@@ -210,6 +237,7 @@ taskInput::-ms-input-placeholder {
   align-self: start;
   align-items: start;
   margin-top: 12px;
+
   color: var(--main-secondary);
 }
 
@@ -222,12 +250,13 @@ taskInput::-ms-input-placeholder {
   grid-column: 1/2;
 }
 .circle {
+  cursor: pointer;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 65%;
-  width: 65%;
+  width: 50px;
+  height: 50px;
   background-color: rgb(255, 255, 255);
   border-radius: 50%;
   display: inline-block;
@@ -238,8 +267,8 @@ taskInput::-ms-input-placeholder {
   font-size: 20px;
 }
 
-.circle.active {
-  background-color: rgb(31, 203, 255);
+.circle.checked {
+  background-color: rgb(106, 215, 248);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -252,9 +281,10 @@ taskInput::-ms-input-placeholder {
 }
 
 .trashIcon {
+  cursor: pointer;
   grid-row: 1/3;
   grid-column: 3/4;
-  color: rgb(161, 161, 161);
+  color: rgb(190, 185, 185);
   text-align: center;
   align-self: center;
   font-size: 30px;
