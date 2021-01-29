@@ -70,7 +70,7 @@ const submit = (e)=>{
     location: location,
     password: password
   }
-  axios.post('https://edufy-api.herokuapp.com/users', user)
+  axios.post('https://edufy-space-api.herokuapp.com/users', user)
   .then((res)=>{
     localStorage.setItem('token', res.data.token);
     localStorage.setItem('user_id', res.data.user_id);

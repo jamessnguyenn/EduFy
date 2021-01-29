@@ -10,7 +10,7 @@ export default function Store() {
     const [coins, setCoins] = useState();
     const history = useHistory();
     useEffect(() => {
-        axios.get(`https://edufy-api.herokuapp.com/users/${localStorage.getItem('user_id')}`, {
+        axios.get(`https://edufy-space-api.herokuapp.com/users/${localStorage.getItem('user_id')}`, {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('token')
             }

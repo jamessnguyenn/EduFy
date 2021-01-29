@@ -49,7 +49,7 @@ function Login(){
     function handleLogin(e) {
         e.preventDefault();
         const user= { email: email, password: password }
-        axios.post("https://edufy-api.herokuapp.com/users/auth",user)
+        axios.post("https://edufy-space-api.herokuapp.com/users/auth",user)
         .then(res=>{
             localStorage.setItem('token', res.data.token);
             localStorage.setItem('user_id', res.data.user_id);

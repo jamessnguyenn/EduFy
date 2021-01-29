@@ -45,7 +45,7 @@ export default function FocusMode({ subHP }) {
       const health ={
         health: newHealth
       }*/
-      /**   axios.put(`https://edufy-api.herokuapp.com/${user._id}/health`, health, {
+      /**   axios.put(`https://edufy-space-api.herokuapp.com/${user._id}/health`, health, {
         headers:{
           'Authorization': 'Bearers ' + localStorage.getItem('token')
         }

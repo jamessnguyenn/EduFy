@@ -14,7 +14,7 @@ export default function ProductivePage() {
   const [health, setHealth] = useState(0);
   const history = useHistory();
   useEffect(() => {
-      axios.get(`https://edufy-api.herokuapp.com/users/${localStorage.getItem('user_id')}`, {
+      axios.get(`https://edufy-space-api.herokuapp.com/users/${localStorage.getItem('user_id')}`, {
           headers: {
               'Authorization': 'Bearer ' + localStorage.getItem('token')
           }

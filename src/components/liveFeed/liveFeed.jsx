@@ -14,7 +14,7 @@ function LiveFeed(){
     const[health, setHealth]= useState(0);
     const[coins, setCoins]=useState();
     useEffect(()=>{
-        axios.get(`https://edufy-api.herokuapp.com/posts/`, {
+        axios.get(`https://edufy-space-api.herokuapp.com/posts/`, {
             headers:{
                 'Authorization': 'Bearer '+localStorage.getItem('token') 
             }
@@ -32,7 +32,7 @@ function LiveFeed(){
     },[])
  
     useEffect(()=>{
-        axios.get(`https://edufy-api.herokuapp.com/users/${localStorage.getItem('user_id')}`, {
+        axios.get(`https://edufy-space-api.herokuapp.com/users/${localStorage.getItem('user_id')}`, {
             headers:{
                 'Authorization': 'Bearer '+localStorage.getItem('token') 
             }
