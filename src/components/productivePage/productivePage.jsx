@@ -14,7 +14,7 @@ export default function ProductivePage() {
     setHP((hp = hp + val));
   }
   function subHP(val) {
-    setHP((hp = hp - val));
+    setHP((hp = hp - val));     
   }
   function addCoins(val) {
     setCoins((coins = coins + val));
@@ -39,3 +39,5 @@ export default function ProductivePage() {
     </>
   );
 }
+
+
