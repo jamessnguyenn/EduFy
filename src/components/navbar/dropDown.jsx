@@ -16,6 +16,12 @@ function NavDropDown() {
           <small className="dropTag">Logout </small>
         </a>
       </DropDownItem>
+
+      <DropDownItem>
+        <a href="/profile">
+          <small className="dropTag">Profile </small>
+        </a>
+      </DropDownItem>
     </div>
   );
 }

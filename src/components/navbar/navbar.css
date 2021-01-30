@@ -39,10 +39,10 @@
   justify-content: start;
   align-items: center;
 }
-.icons{
-  display:flex;
-  color:rgb(105, 90, 4);
-  padding-left:10px;
+.icons {
+  display: flex;
+  color: rgb(105, 90, 4);
+  padding-left: 10px;
 }
 .loadingBars {
   background: var(--main-gold);
@@ -52,7 +52,7 @@
   flex-direction: row;
   justify-content: start;
   align-items: center;
-  transition:1s ease;
+  transition: 1s ease;
 }
 
 .coinsContainer {
@@ -95,7 +95,7 @@
   position: absolute;
   top: 48px;
   width: 70px;
-  transform: translateX(310%);
+  transform: translateX(330%);
   background-color: var(--main-color);
   border-color: white;
   color: black;
