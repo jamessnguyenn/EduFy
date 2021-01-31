@@ -5,12 +5,14 @@ import { faCoins, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import DropDown from "./dropDown.jsx";
 
-export default function Navbar({ hp, coins }) {
+export default function Navbar({ hp, coins, profilePicLink }) {
   const [dropDown, setDrop] = useState(false);
 
   const logout = () => {
     localStorage.clear();
   };
+
+
   return (
     <div className="navBar">
       <Link to="/profile">
@@ -42,8 +44,7 @@ export default function Navbar({ hp, coins }) {
         <div>
         <div className="profilePicContainer" onClick={() => setDrop(!dropDown)}>
           <img
-            src="https://lh3.googleusercontent.com/pw/ACtC-3epGaOLwsQy8jEs3TDBU2gpTBf3pBld_YOEn30o8xo4-eMOiTiwuaHvnMZa4UYP7F-rbbFAYvgxaOqf_PzxbNZFIbzT3tpFv3tV3NZEV6ZgU1J2MrekipxA9a3IKEXxHS5nA3TLocdqFxAIcmQhMoNO=s512-no?authuser=0"
-            alt="Profile"
+            src={profilePicLink}
             className="profilePic"
           />
         </div>

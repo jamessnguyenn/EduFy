@@ -11,7 +11,7 @@ import axios from "axios";
 export default function ProductivePage() {
   let [hp, setHP] = useState(0);
   let [coins, setCoins] = useState(0);
-  const [health, setHealth] = useState(0);
+  const[profilePicLink, setProfilePicLink] = useState('./loading-image.gif');
   const history = useHistory();
   useEffect(() => {
       axios.get(`https://edufy-space-api.herokuapp.com/users/${localStorage.getItem('user_id')}`, {
@@ -22,6 +22,8 @@ export default function ProductivePage() {
           .then(res => {
               setHP(res.data.health);
               setCoins(res.data.gold);
+              setProfilePicLink(res.data.avatar);
+              
               
           })
           .catch(err => {
@@ -48,7 +50,7 @@ export default function ProductivePage() {
 
   return (
     <>
-      <Navbar hp={hp} coins={coins} />
+      <Navbar hp={hp} coins={coins} profilePicLink={profilePicLink}/>
       <div className="productivityPage">
         <div className="row">
           <PomodoroTimer addCoins={addCoins} />

@@ -1,4 +1,4 @@
-import NavBar from '../navbar/navbar';
+import Navbar from '../navbar/navbar';
 import './store.css';
 import Product from './product';
 import { useState } from 'react';
@@ -7,7 +7,8 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 export default function Store() {
     const [health, setHealth] = useState(0);
-    const [coins, setCoins] = useState();
+    const [coins, setCoins] = useState(0);
+    const[profilePicLink, setProfilePicLink] = useState('./loading-image.gif');
     const history = useHistory();
     useEffect(() => {
         axios.get(`https://edufy-space-api.herokuapp.com/users/${localStorage.getItem('user_id')}`, {
@@ -16,9 +17,10 @@ export default function Store() {
             }
         })
             .then(res => {
-                console.log(res.data);
+              
                 setHealth(res.data.health);
                 setCoins(res.data.gold);
+                setProfilePicLink(res.data.avatar);
                 
             })
             .catch(err => {
@@ -32,7 +34,7 @@ export default function Store() {
 
     return (
         <div>
-            <NavBar hp={health} coins={coins} />
+           <Navbar hp={health} coins={coins} profilePicLink={profilePicLink}/>
             <div className="store-header">
                 <div className="footer-container">
                     <h1 className="footerTitle"> Time for Your Rewards</h1>

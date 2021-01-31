@@ -27,7 +27,6 @@ export default function FocusMode({ subHP }) {
   // User has switched away from the tab (AKA tab is hidden)
   const onBlur = () => {
     setUserOnBrowser(false);
-    subHP(10);
   };
 
   useEffect(() => {

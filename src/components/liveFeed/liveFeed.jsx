@@ -12,7 +12,8 @@ function LiveFeed(){
    
     const[posts, setPosts] = useState([]);
     const[health, setHealth]= useState(0);
-    const[coins, setCoins]=useState();
+    const[coins, setCoins]=useState(0);
+    const[profilePicLink, setProfilePicLink] = useState('./loading-image.gif');
     useEffect(()=>{
         axios.get(`https://edufy-space-api.herokuapp.com/posts/`, {
             headers:{
@@ -38,9 +39,10 @@ function LiveFeed(){
             }
         })
         .then(res=>{
-            console.log(res.data);
+            
             setHealth(res.data.health);
             setCoins(res.data.gold);
+            setProfilePicLink(res.data.avatar);
             
         })
         
@@ -50,7 +52,7 @@ function LiveFeed(){
     return(
         
         <div className="live-feed">
-        <NavBar hp={health} coins={coins}/>
+        <NavBar hp={health} coins={coins} profilePicLink={profilePicLink}/>
         <div><h1 className="feed-title">Updates From the World</h1></div>
         <img src={liveFeedSvg} className="post-image"></img>
         {posts.map(post=>{
