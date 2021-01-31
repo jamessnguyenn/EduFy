@@ -39,6 +39,7 @@ export default function Navbar({ hp, coins }) {
           &nbsp; &nbsp; <span className="coinNumber"> {coins} </span>
           <FontAwesomeIcon className="coinIcon" icon={faCoins} />
         </div>
+        <div>
         <div className="profilePicContainer" onClick={() => setDrop(!dropDown)}>
           <img
             src="https://lh3.googleusercontent.com/pw/ACtC-3epGaOLwsQy8jEs3TDBU2gpTBf3pBld_YOEn30o8xo4-eMOiTiwuaHvnMZa4UYP7F-rbbFAYvgxaOqf_PzxbNZFIbzT3tpFv3tV3NZEV6ZgU1J2MrekipxA9a3IKEXxHS5nA3TLocdqFxAIcmQhMoNO=s512-no?authuser=0"
@@ -47,10 +48,7 @@ export default function Navbar({ hp, coins }) {
           />
         </div>
         {dropDown && <DropDown />}
-
-        {/*   <a href="/" onClick={logout}>
-          <small className="navLink">Logout </small>
-        </a> */}
+        </div>
       </div>
     </div>
   );

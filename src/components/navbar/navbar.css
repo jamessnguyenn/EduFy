@@ -76,8 +76,8 @@
 }
 
 .profilePic {
-  height: 24px;
-  width: 24px;
+  height: 38px;
+  width: 38px;
 }
 
 .profilePicContainer {
@@ -85,37 +85,40 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  width: 38px;
-  height: 29px;
+  width: 48px;
+  height: 39px;
   margin-left: 10px;
   margin-right: 10px;
 }
 
-.navDropDown {
-  position: absolute;
-  top: 48px;
-  width: 70px;
-  transform: translateX(330%);
+.navDropDown { 
+  display:flex;
+  flex-direction: column;
+  position:absolute;
+  margin-top:6px;
   background-color: var(--main-color);
   border-color: white;
   color: black;
   border-radius: 8px;
-  padding: 12px;
-  overflow: hidden;
+  padding-top:10px;
+  padding-bottom:10px;
 }
+.dropTag {
+  color: white;
+  font-size: 15px; 
+  padding:14px;
+  padding-right: 40px;
 
-.droptag {
-  color: black;
-  font-size: 20px;
 }
 
 .menu-item {
   background-color: #437fc7;
+  margin-bottom:5px;
 }
 
 .menu-item:hover {
-  background-color: #4491f0f1;
-  margin-left: auto;
+  background-color: #618dc4f1;
+ 
 }
 
 .coinNumber {
