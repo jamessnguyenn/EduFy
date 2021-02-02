@@ -49,6 +49,7 @@ export default function ToDoSubmit({ addTodo }) {
             required
             className="taskInput"
             placeholder="Add a task"
+           
             type="text"
             value={todo.description}
             onChange={handleTaskInputChange}
