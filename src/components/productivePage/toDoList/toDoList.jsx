@@ -98,6 +98,15 @@ export default function ToDoList({ addCoins }) {
           {" "}
           To Be Done{" "}
         </button>
+        <button
+          className={
+            filter === "Overdue" ? "taskButton isActive" : " taskButton"
+          }
+          onClick={() => changeFilter("Overdue")}
+        >
+          {" "}
+          Past Due{" "}
+        </button>
       </div>
 
       <div className="toDoFeed">
