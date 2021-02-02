@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 
 export default function ToDoSubmit({ addTodo }) {
+  var tzoffset = (new Date()).getTimezoneOffset() * 60000; 
+  var date = (new Date(Date.now() - tzoffset)).toISOString().split("T")[0];
+
   const [todo, setTodo] = useState({
     _id: "",
     checked: false,
@@ -58,6 +61,7 @@ export default function ToDoSubmit({ addTodo }) {
           value={todo.dueDate}
           className="dateInput darkShadow"
           type="date"
+          min={date}
           onChange={handleDateInputChange}
         />
 
