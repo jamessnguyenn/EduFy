@@ -40,18 +40,27 @@
       width:100%;
       margin-bottom: 20px;
   }
-  .buy-now-btn{
+  .buy-now-btn {
       border-radius: 60px;
       padding:10px;
       background-color: var(--main-color);
       color: white;
       border-style: none;
+      outline:none;
+      cursor:pointer;
   }
+  .buy-now-btn:disabled, .buy-now-btn:hover:disabled{
+    opacity: 0.5;
+    background-color: var(--main-color);
+    cursor:not-allowed;
+  
+}
+
   .buy-now-btn:hover{
     border-radius: 60px;
     padding:10px;
     background-color:#4d91e6;
-    cursor:pointer;
+    
     color: white;
     border-style: none;
 }
