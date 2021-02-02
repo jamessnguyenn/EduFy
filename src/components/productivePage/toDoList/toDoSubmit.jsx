@@ -50,10 +50,7 @@ export default function ToDoSubmit({ addTodo }) {
             value={todo.description}
             onChange={handleTaskInputChange}
           />
-          <div className="taskBTN" onClick={handleSubmit}>
-            {" "}
-            +{" "}
-          </div>
+          <input type="submit" className="taskBTN" value=" + "/>
         </div>
 
         <input
@@ -64,7 +61,7 @@ export default function ToDoSubmit({ addTodo }) {
           onChange={handleDateInputChange}
         />
 
-        {/*  <input className="taskBTN" input="click" value="+" /> */}
+       
       </form>
     </>
   );

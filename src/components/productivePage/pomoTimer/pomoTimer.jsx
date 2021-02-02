@@ -6,9 +6,9 @@ import axios from "axios";
 import "../productivePage.css";
 
 export default function PomoTimer({ user, addCoins }) {
-  //let [timerMin, setTimerMin] = useState("24");
+ 
   const [isPaused, setIsPaused] = useState(true);
-  const [timerSecs, setTimerSec] = useState("1500");
+  const [timerSecs, setTimerSec] = useState(1500);
   const [timerMode, setTimerMode] = useState("pomodoro");
   const [counter, setCounter] = useState(0);
   //Converting total time to display
@@ -23,25 +23,8 @@ export default function PomoTimer({ user, addCoins }) {
   useEffect(() => {
     console.log(counter);
     if (counter > 0) {
-      const post = {
-        avatar: user.avatar,
-        description:
-          user.firstName + " completed" + counter + " pomodoros. Keep it up!",
-        name: user.firstName + " " + user.lastName,
-        location: user.location,
-        badge: false,
-      };
-      /**axios.post(`https://edufy-api.herokuapp.com/posts`, post, {
-        headers:{
-          'Authorization': 'Bearers ' + localStorage.getItem('token')
-        }
-      })
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err=>{
-        console.log(err);
-      })**/
+     
+     //post user to live feed here
     }
   }, [counter]);
 

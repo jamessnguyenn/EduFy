@@ -37,18 +37,16 @@ export default function ProductivePage() {
   }, [])
 
 
-  function addHP(val) {
-    setHP((hp = hp + val));
-  }
+ 
   function subHP(val) {
-    setHP((hp = hp - val));     
+    setHP(prevHP => prevHP-val);   
+    //toDo add subracted value to database  
   }
   function addCoins(val) {
-    setCoins((coins = coins + val));
+    setCoins(prevCoins => prevCoins+val);
+    //toDo show added coins to database
   }
-  function subCoins(val) {
-    setCoins((coins = coins - val));
-  }
+ 
 
   return (
     <>

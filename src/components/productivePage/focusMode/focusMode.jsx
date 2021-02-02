@@ -40,21 +40,8 @@ export default function FocusMode({ subHP }) {
         "Please stay on the browser and continue studying! You've lost 10 health."
       );
       document.title = "Come back!";
-      /**  var newHealth = user.health -10;
-      const health ={
-        health: newHealth
-      }*/
-      /**   axios.put(`https://edufy-space-api.herokuapp.com/${user._id}/health`, health, {
-        headers:{
-          'Authorization': 'Bearers ' + localStorage.getItem('token')
-        }
-      })
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err=>{
-        console.log(err);
-      })**/
+      subHP(10);
+      
     } else {
       document.title = "Your Profile";
     }
