@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 
 export default function ToDoSubmit({ addTodo }) {
-  var tzoffset = (new Date()).getTimezoneOffset() * 60000; 
-  var date = (new Date(Date.now() - tzoffset)).toISOString().split("T")[0];
+  var tzoffset = new Date().getTimezoneOffset() * 60000;
+  var date = new Date(Date.now() - tzoffset).toISOString().split("T")[0];
 
   const [todo, setTodo] = useState({
     _id: "",
     checked: false,
     description: "",
     dueDate: "",
+    Overdue: false,
   });
 
   function handleTaskInputChange(e) {
@@ -18,7 +19,13 @@ export default function ToDoSubmit({ addTodo }) {
   }
 
   function handleDateInputChange(e) {
-    setTodo({ ...todo, dueDate: e.target.value });
+    if (e.target.value < date) {
+      setTodo({ ...todo, dueDate: e.target.value, Overdue: true });
+      console.log("overdue");
+    } else {
+      console.log("not overdue");
+      setTodo({ ...todo, dueDate: e.target.value });
+    }
   }
 
   function makeid(length) {
@@ -49,24 +56,21 @@ export default function ToDoSubmit({ addTodo }) {
             required
             className="taskInput"
             placeholder="Add a task"
-           
             type="text"
             value={todo.description}
             onChange={handleTaskInputChange}
           />
-          <input type="submit" className="taskBTN" value=" + "/>
+          <input type="submit" className="taskBTN" value=" + " />
         </div>
 
         <input
-        required
+          required
           value={todo.dueDate}
           className="dateInput darkShadow"
           type="date"
-          min={date}
+          /*   min={date} */
           onChange={handleDateInputChange}
         />
-
-       
       </form>
     </>
   );

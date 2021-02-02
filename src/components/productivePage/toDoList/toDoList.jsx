@@ -16,6 +16,7 @@ export default function ToDoList({ addCoins }) {
     if (storageTodos) {
       setTodos(storageTodos);
     }
+    //checkOverDue();
   }, []);
 
   useEffect(() => {
@@ -27,6 +28,17 @@ export default function ToDoList({ addCoins }) {
     // adds new todo to beginning of todos array
     setTodos([todo, ...todos]);
   };
+
+  function checkOverDue() {
+    setTodos(
+      todos.map((todo) => {
+        if (todo.dueDate < new Date()) {
+          console.log(todo.description);
+          todo.Overdue = true;
+        }
+      })
+    );
+  }
 
   function removeTodo(id) {
     setTodos(todos.filter((todo) => todo._id !== id));

@@ -30,7 +30,7 @@
   grid-row: 2/3;
   margin-top: 0px;
   grid-column: 1/4;
-  
+
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -69,8 +69,8 @@
   flex-direction: row;
   justify-content: space-evenly;
   height: 65%;
- 
- margin-top: 0.75%;
+
+  margin-top: 0.75%;
   padding: 0px;
   width: 100%;
 }
@@ -231,6 +231,9 @@
   padding-top: 5px;
   margin-bottom: 10px;
 }
+.task.taskLate {
+  opacity: 100%;
+}
 
 .taskName {
   grid-row: 1/2;
@@ -279,6 +282,9 @@
 .taskDueDate {
   grid-row: 2/3;
   grid-column: 2/3;
+}
+.taskDueDate.pastDueDate {
+  color: red;
 }
 
 .trashIcon {
