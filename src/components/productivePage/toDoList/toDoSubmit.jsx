@@ -9,7 +9,7 @@ export default function ToDoSubmit({ addTodo }) {
     checked: false,
     description: "",
     dueDate: "",
-    Overdue: false,
+    overdue: false,
   });
 
   function handleTaskInputChange(e) {
@@ -19,13 +19,7 @@ export default function ToDoSubmit({ addTodo }) {
   }
 
   function handleDateInputChange(e) {
-    if (e.target.value < date) {
-      setTodo({ ...todo, dueDate: e.target.value, Overdue: true });
-      console.log("overdue");
-    } else {
-      console.log("not overdue");
       setTodo({ ...todo, dueDate: e.target.value });
-    }
   }
 
   function makeid(length) {
@@ -55,10 +49,12 @@ export default function ToDoSubmit({ addTodo }) {
           <input
             required
             className="taskInput"
-            placeholder="Add a task"
+            placeholder="Add a Task"
+            onBlur={(e) => e.target.placeholder = "Add a Task"}
             type="text"
             value={todo.description}
             onChange={handleTaskInputChange}
+            onFocus={(e) => e.target.placeholder = ""} 
           />
           <input type="submit" className="taskBTN" value=" + " />
         </div>
@@ -68,7 +64,7 @@ export default function ToDoSubmit({ addTodo }) {
           value={todo.dueDate}
           className="dateInput darkShadow"
           type="date"
-          /*   min={date} */
+          min={date} 
           onChange={handleDateInputChange}
         />
       </form>

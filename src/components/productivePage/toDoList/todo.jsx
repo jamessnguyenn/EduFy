@@ -13,7 +13,7 @@ export default function Todo({ todo, toggleComplete, removeTodo }) {
   }
 
   return (
-    <div className={!todo.Overdue ? "task" : "task taskLate"}>
+    <div className={!todo.overdue ? "task" : "task taskLate"}>
       {<h4 className="taskName"> {todo.description} </h4>}
       <div className="circleContainer">
         <div
@@ -28,10 +28,10 @@ export default function Todo({ todo, toggleComplete, removeTodo }) {
         </div>
       </div>
       <small
-        className={!todo.Overdue ? "taskDueDate" : "taskDueDate pastDueDate"}
+        className={!todo.overdue ? "taskDueDate" : "taskDueDate pastDueDate"}
       >
         {" "}
-        {todo.Overdue ? "LATE: " : ""} {todo.dueDate}{" "}
+        {todo.overdue ? "OVERDUE: " : ""} {todo.dueDate}{" "}
       </small>
       <FontAwesomeIcon
         className="trashIcon"

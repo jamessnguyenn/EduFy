@@ -1,4 +1,5 @@
 .todoContainer {
+  font-family: "Oxygen", sans-serif;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 15% 15% 8% 1fr;
@@ -130,7 +131,7 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-  font-size: 180%;
+  font-size: 2vw;
 }
 .taskBTN:hover {
   cursor: pointer;
@@ -223,7 +224,7 @@
   display: grid;
   grid-template-columns: 20% 1fr 15%;
   grid-template-rows: 40% 1fr;
-  grid-row-gap: 14px;
+  grid-row-gap: 10px;
   color: var(--main-color);
   width: 65%;
   height: 50px;
@@ -231,17 +232,15 @@
   padding-top: 5px;
   margin-bottom: 10px;
 }
-.task.taskLate {
-  opacity: 100%;
-}
 
 .taskName {
   grid-row: 1/2;
+  font-size: 20px;
   grid-column: 2/3;
   align-self: start;
   align-items: start;
-  margin-top: 12px;
-
+  margin-top: 3px;
+  margin-bottom: 2px;
   color: var(--main-secondary);
 }
 
@@ -259,8 +258,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background-color: rgb(255, 255, 255);
   border-radius: 50%;
   display: inline-block;
@@ -284,7 +283,7 @@
   grid-column: 2/3;
 }
 .taskDueDate.pastDueDate {
-  color: red;
+  color: rgb(247, 91, 91);
 }
 
 .trashIcon {

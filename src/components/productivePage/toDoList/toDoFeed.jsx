@@ -18,7 +18,7 @@ export default function ToDoFeed({
   } else if (filter === "complete") {
     todosFilter = todos.filter((todo) => !todo.checked);
   } else if (filter === "Overdue") {
-    todosFilter = todos.filter((todo) => todo.Overdue);
+    todosFilter = todos.filter((todo) => todo.overdue);
   }
 
   return (
