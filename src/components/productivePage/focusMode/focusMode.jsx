@@ -52,7 +52,7 @@ export default function FocusMode({ subHP }) {
       <h2 className="focusTitle"> Focus Mode </h2>
       <Switch onChange={handleChange} checked={checked} onColor="#437fc7" />
       <label class="toggle-switch-label" for="toggleSwitch"></label>
-      <img src={CodingSVG} className="codingSVG" alt="coding" />
+      
     </div>
   );
 }

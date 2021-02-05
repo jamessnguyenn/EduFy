@@ -34,8 +34,7 @@ export default function ToDoSubmit({ addTodo }) {
   }
 
   function handleSubmit(e) {
-    e.preventDefault(); // prevents browser refresh
-    // trim() gets rid of string whitespace
+    e.preventDefault(); 
     if (todo.description.trim()) {
       addTodo({ ...todo, _id: makeid(36) });
       setTodo({ ...todo, description: "", dueDate: "" });

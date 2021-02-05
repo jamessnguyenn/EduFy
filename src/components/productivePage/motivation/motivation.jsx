@@ -45,7 +45,7 @@ export default function Motivation() {
 
   return (
     <div className="templateBG motivationContainer  shadow">
-      <h3 className="motivationalQuotes"> Message for you</h3>
+      <h3 className="motivationalQuotes"> Message for You</h3>
       <p className="quote"> {quote}</p>
     </div>
   );
