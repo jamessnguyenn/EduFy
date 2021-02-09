@@ -6,7 +6,6 @@ import axios from "axios";
 import "../productivePage.css";
 
 export default function PomoTimer({ user, addCoins }) {
- 
   const [isPaused, setIsPaused] = useState(true);
   const [timerSecs, setTimerSec] = useState(1500);
   const [timerMode, setTimerMode] = useState("pomodoro");
@@ -23,8 +22,7 @@ export default function PomoTimer({ user, addCoins }) {
   useEffect(() => {
     console.log(counter);
     if (counter > 0) {
-     
-     //post user to live feed here
+      //post user to live feed here
     }
   }, [counter]);
 
