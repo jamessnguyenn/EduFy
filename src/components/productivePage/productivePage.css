@@ -72,6 +72,17 @@
   margin-right: 12px;
 }
 
+.darkOverLay {
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.787);
+  height: 100vh;
+  position: absolute;
+  z-index: 3;
+}
+.darkOverLay.hide {
+  visibility: hidden;
+}
+
 @media only screen and (max-width: 600px) {
   .row {
     flex-direction: column;

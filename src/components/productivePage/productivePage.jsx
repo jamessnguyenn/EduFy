@@ -13,6 +13,7 @@ export default function ProductivePage() {
   let [hp, setHP] = useState(0);
   let [coins, setCoins] = useState(0);
   let [lostpopUp, togglePopUp] = useState(true);
+
   const [profilePicLink, setProfilePicLink] = useState("./loading-image.gif");
   const history = useHistory();
   useEffect(() => {
@@ -51,10 +52,11 @@ export default function ProductivePage() {
 
   return (
     <>
+      <div className={lostpopUp ? "darkOverLay" : "darkOverLay hide"}> .</div>
       <Navbar hp={hp} coins={coins} profilePicLink={profilePicLink} />
+
       <div className="productivityPage">
-        {/*     <LostPopUp className={lostPopUp ? "lostPopUp show" : "lostPopUp"} /> */}
-        <LostPopUp className={lostpopUp ? "show lostPopUp" : "lostPopUp"} />
+        <LostPopUp lostpopUp={lostpopUp} />
         <div className="row">
           <PomodoroTimer addCoins={addCoins} />
           <Motivation />
