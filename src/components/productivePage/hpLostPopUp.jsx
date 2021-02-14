@@ -3,13 +3,11 @@ import "./productivePage.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeartBroken } from "@fortawesome/free-solid-svg-icons";
 
-export default function HpLostPopUp() {
-  let lost = 5;
-  let [lostpopUp, togglePopUp] = useState(false);
+export default function HpLostPopUp({setLostPopUp}) {
   return (
-    <div className={lostpopUp ? "lostPopUp show shadow" : "lostPopUp"}>
+    <div className= "lostPopUp show shadow">
       <FontAwesomeIcon className="brokenHeartIcon" icon={faHeartBroken} />
-      <h4> You have lost {lost} hp </h4>
+      <h4> You have lost all your health. Your profile will now reset.</h4>
     </div>
   );
 }
