@@ -12,6 +12,7 @@ export default function Store() {
     const[bought, setBought]=useState([]);
     const history = useHistory();
     useEffect(() => {
+        document.title = "EduFy Store";
         axios.get(`https://edufy-space-api.herokuapp.com/users/${localStorage.getItem('user_id')}`, {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('token')
