@@ -7,9 +7,9 @@ export default function HpLostPopUp({ lostpopUp }) {
   let lost = 5;
 
   return (
-    <div className={lostpopUp ? "lostPopUp show shadow" : "lostPopUp"}>
+    <div className="lostPopUp show shadow">
       <FontAwesomeIcon className="brokenHeartIcon" icon={faHeartBroken} />
-      <h4> You have lost {lost} hp </h4>
+      <h4> You have lost all your health. Your profile will now reset.</h4>
     </div>
   );
 }

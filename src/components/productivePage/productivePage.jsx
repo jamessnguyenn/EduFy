@@ -49,14 +49,16 @@ export default function ProductivePage() {
     setCoins((prevCoins) => prevCoins + val);
     //toDo show added coins to database
   }
-
+  function setLostPopUp(isShown) {
+    togglePopUp(isShown);
+  }
   return (
     <>
       <div className={lostpopUp ? "darkOverLay" : "darkOverLay hide"}> .</div>
       <Navbar hp={hp} coins={coins} profilePicLink={profilePicLink} />
 
       <div className="productivityPage">
-        <LostPopUp lostpopUp={lostpopUp} />
+        {lostpopUp && <LostPopUp setLostPopUp={setLostPopUp} />}
         <div className="row">
           <PomodoroTimer addCoins={addCoins} />
           <Motivation />

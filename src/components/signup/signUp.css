@@ -137,4 +137,8 @@
  }
 .email-field{
   margin-bottom:5px;
+  margin-top:10px;
+}
+.password-field, .location-field{
+  margin-top: 10px;
 }

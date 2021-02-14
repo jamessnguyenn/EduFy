@@ -15,6 +15,7 @@ function LiveFeed(){
     const[coins, setCoins]=useState(0);
     const[profilePicLink, setProfilePicLink] = useState('./loading-image.gif');
     useEffect(()=>{
+        document.title = "Live Feed";
         axios.get(`https://edufy-space-api.herokuapp.com/posts/`, {
             headers:{
                 'Authorization': 'Bearer '+localStorage.getItem('token') 
