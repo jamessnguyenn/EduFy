@@ -35,24 +35,29 @@
 .lostPopUp {
   
   position: absolute;
+  padding-bottom:20px;
   left: 0; 
   right: 0; 
-  padding-left: 15px;
-  padding-right:10px;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right:20px;
   margin-left: auto; 
   margin-right: auto;
-  margin-top: 15%;
+  margin-top: 20%;
   display: flex;
-  
+  flex-direction: column;
   color: rgb(233, 233, 233);
   background: black;
   border-radius: 12px;
   text-align:left;
 
-  width: 270px;
+  width: 290px;
 }
 
-
+.lostPopUp-header{
+  display: flex;
+  flex-direction: row;
+}
 .brokenHeartIcon {
   margin-top: 25px;
   margin-right: 15px;
@@ -71,7 +76,28 @@
 .darkOverLay.hide {
   visibility: hidden;
 }
+.close-button:hover{
+  background-color:#4d91e6;
+  cursor:pointer;
+  outline:none;
 
+}
+.close-button {
+  outline:none;
+ 
+  border-radius: 60px;
+  background-color:var(--main-color) ;
+  font-size:20px;
+  padding:5px;
+  
+  color: white;
+  border:none;
+}
+.close-button:active{
+  background-color:#547baa;
+  cursor:pointer;
+  outline:none;
+}
 @media only screen and (max-width: 600px) {
   .row {
     flex-direction: column;

@@ -54,11 +54,11 @@ export default function ProductivePage() {
   }
   return (
     <>
-      <div className={lostpopUp ? "darkOverLay" : "darkOverLay hide"}> .</div>
+      {lostpopUp &&<div className="darkOverLay">   <LostPopUp setLostPopUp={setLostPopUp} /></div>}
       <Navbar hp={hp} coins={coins} profilePicLink={profilePicLink} />
 
       <div className="productivityPage">
-        {lostpopUp && <LostPopUp setLostPopUp={setLostPopUp} />}
+        
         <div className="row">
           <PomodoroTimer addCoins={addCoins} />
           <Motivation />
